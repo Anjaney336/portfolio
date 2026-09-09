@@ -235,6 +235,114 @@
   .skill-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:20px;}
   .skill-col h3{font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--copper); margin:0 0 10px 0; font-weight:600;}
   .skill-col p{margin:0; font-size:0.9rem; color:var(--ink-soft);}
+
+  /* ---------- Responsive polish ---------- */
+  html{scroll-behavior:smooth; overflow-x:hidden;}
+  body{overflow-x:hidden;}
+  img,svg{max-width:100%;}
+  a{overflow-wrap:anywhere; text-underline-offset:3px;}
+  a:focus-visible{outline:3px solid var(--copper-bright); outline-offset:3px;}
+  .hero-inner{padding-right:160px;}
+  .hero-role{font-size:clamp(1.06rem,2vw,1.22rem); line-height:1.55;}
+  .hero-meta{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px 28px;}
+  .hero-meta div{min-width:0; padding-right:0; line-height:1.45; overflow-wrap:anywhere;}
+  .tb-strip{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); padding:0;}
+  .tb-cell{min-width:0; padding:15px 18px;}
+  .tb-cell a{display:inline-block; line-height:1.4;}
+  .project{box-shadow:0 14px 36px rgba(28,37,48,.055);}
+  .p-head{display:grid; grid-template-columns:minmax(0,1fr) auto;}
+  .p-head > div{min-width:0;}
+  .p-title,.p-sub{overflow-wrap:anywhere;}
+  .p-body > *,.chart-row > *,.model-grid > *{min-width:0;}
+  .p-desc p,.p-desc li{line-height:1.62;}
+  .spec-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:thin;}
+  .photo{min-width:0; border-radius:6px; overflow:hidden;}
+  .photo figcaption,.chart-cap,.diagram-cap{line-height:1.5;}
+  .report-btn,.p-link,.cert-link{transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;}
+  .report-btn:hover,.p-link:hover,.cert-link:hover{transform:translateY(-1px);}
+  .cert-panel{align-items:stretch; box-shadow:0 14px 36px rgba(28,37,48,.05);}
+  .cert-list li{display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:start;}
+  .cert-list .num{white-space:nowrap; color:var(--ink-soft); font-size:.8rem; padding-top:2px;}
+  .cert-link{color:var(--ink); text-decoration:none; font-weight:600;}
+  .cert-link:hover{color:var(--blue);}
+  .cert-issuer{font-weight:400;}
+  .cert-cta{display:flex; flex:0 0 210px; flex-direction:column; align-items:center; justify-content:center; border-left:1px solid var(--paper-line); padding-left:24px;}
+  .cert-cta .verify-mark{width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:var(--copper-soft); color:var(--copper); font-family:'Space Grotesk',sans-serif; font-weight:700; margin-bottom:10px;}
+  .cert-cta strong{font-family:'Space Grotesk',sans-serif; font-size:.92rem;}
+
+  @media (max-width:820px){
+    .wrap{padding-left:22px; padding-right:22px;}
+    .hero{padding:68px 0 52px;}
+    .hero-inner{padding-right:142px;}
+    .hero-meta{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .tb-strip{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .tb-cell:nth-child(2){border-right:none;}
+    section{padding:48px 0;}
+    .p-body{grid-template-columns:1fr;}
+    .cert-cta{flex-basis:100%; border-left:0; border-top:1px solid var(--paper-line); padding:22px 0 0;}
+  }
+
+  @media (max-width:640px){
+    .wrap{padding-left:17px; padding-right:17px;}
+    .hero{padding:52px 0 38px;}
+    .hero-inner{padding-right:0;}
+    .hero h1{font-size:clamp(2.35rem,12vw,3.25rem); line-height:1.02; margin-top:18px;}
+    .hero-role{margin-bottom:24px;}
+    .hero-meta{grid-template-columns:1fr; gap:15px; margin-top:26px; padding-top:18px;}
+    .hero-meta div{padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,.09);}
+    .hero-meta div:last-child{border-bottom:0; padding-bottom:0;}
+    .hero-qr{display:flex; align-items:center; width:max-content; max-width:100%; gap:12px; margin-top:24px; padding:8px 12px 8px 8px; border-color:rgba(255,255,255,.2); border-radius:6px;}
+    .hero-qr img{width:72px; height:72px; flex:0 0 auto;}
+    .hero-qr span{margin:0; max-width:110px; text-align:left; line-height:1.35;}
+    .tb-strip{grid-template-columns:1fr;}
+    .tb-cell{border-right:0; padding:13px 17px;}
+    section{padding:38px 0;}
+    .sec-head{gap:10px;}
+    .sec-title{font-size:1.45rem; line-height:1.2;}
+    .sec-intro{margin:12px 0 26px; font-size:.98rem; line-height:1.6;}
+    .project{margin-bottom:22px; border-left-color:var(--paper-line); border-right-color:var(--paper-line);}
+    .p-head{grid-template-columns:1fr; gap:14px; padding:19px 18px 16px;}
+    .p-title{font-size:1.18rem; line-height:1.3;}
+    .p-link{justify-self:start; min-height:42px; display:inline-flex; align-items:center; padding:8px 13px;}
+    .p-body{padding:18px; gap:20px;}
+    .p-desc p,.p-desc ul{font-size:.92rem;}
+    .p-stats{gap:12px 10px;}
+    .stat .num{font-size:1.08rem;}
+    .p-stack{padding:13px 18px 18px;}
+    .chip{line-height:1.4;}
+    .p-media{padding:0 18px 18px;}
+    .photo-grid{display:grid; grid-template-columns:1fr;}
+    .photo,.photo.wide{width:100%;}
+    .photo img{height:auto; aspect-ratio:16/10;}
+    .vendor-summary{gap:8px;}
+    .vendor-summary .insight{padding:12px;}
+    .spec-wrap{padding:0 18px 18px; margin:0;}
+    table.spec{min-width:620px; font-size:.81rem;}
+    table.spec th,table.spec td{padding:8px;}
+    .chart-row,.model-grid{gap:12px;}
+    .chart-box,.diagram-box{padding:12px;}
+    .report-links{display:grid; grid-template-columns:1fr;}
+    .report-btn{display:flex; align-items:center; justify-content:center; min-height:44px; text-align:center;}
+    .repo-qr{align-items:flex-start;}
+    .cert-panel{padding:19px 17px;}
+    .cert-list li{grid-template-columns:1fr; gap:4px; padding:12px 0;}
+    .cert-issuer{display:block; margin-top:2px;}
+    .cert-list .num{padding-top:0;}
+    .skill-grid{grid-template-columns:1fr; gap:18px;}
+    footer{padding:28px 0 42px; line-height:1.7;}
+  }
+
+  @media (max-width:390px){
+    .wrap{padding-left:14px; padding-right:14px;}
+    .hero-eyebrow{font-size:.64rem; letter-spacing:.1em;}
+    .p-stats{grid-template-columns:1fr;}
+    .hero-qr img{width:64px; height:64px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{transition:none!important;}
+  }
 </style>
 </head>
 <body>
@@ -944,18 +1052,19 @@
     <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Certifications</h2></div>
     <div class="cert-panel">
       <ul class="cert-list">
-        <li><span>Google AI Essentials <span class="cert-issuer">— Google / Coursera</span></span><span class="num">Dec 2025</span></li>
-        <li><span>MATLAB Onramp <span class="cert-issuer">— MathWorks Training Services</span></span><span class="num">Jan 2026</span></li>
-        <li><span>Python <span class="cert-issuer">— Kaggle</span></span><span class="num">Dec 2025</span></li>
-        <li><span>Data Analytics <span class="cert-issuer">— Skillsetmaster</span></span><span class="num">Jan 2026</span></li>
-        <li><span>Data Analytics Assessment <span class="cert-issuer">— LearnTube.ai</span></span><span class="num">Jan 2026</span></li>
-        <li><span>Time Series Forecasting Assessment <span class="cert-issuer">— LearnTube.ai</span></span><span class="num">Jan 2026</span></li>
-        <li><span>Onshape Hands-On Test Drive <span class="cert-issuer">— Onshape by PTC</span></span><span class="num">Aug 2026</span></li>
-        <li><span>Artificial Intelligence <span class="cert-issuer">— Skillumni</span></span><span class="num">Apr 2026</span></li>
+        <li><a class="cert-link" href="https://drive.google.com/file/d/1-GxtLezWWk4h4AhkG6Kko-bNbLcbH8QR/view?usp=drive_link" target="_blank" rel="noopener">Google AI Essentials <span class="cert-issuer">— Google / Coursera</span></a><span class="num">Dec 2025</span></li>
+        <li><a class="cert-link" href="https://drive.google.com/file/d/1uqZoRhxQo2hn8psNpFnfg-OdEz7gMvDH/view?usp=drive_link" target="_blank" rel="noopener">MATLAB Onramp <span class="cert-issuer">— MathWorks Training Services</span></a><span class="num">Jan 2026</span></li>
+        <li><a class="cert-link" href="https://drive.google.com/file/d/1rPpnMFKL4MIRGVpAaFZdRgBqSE2PcUrW/view?usp=drive_link" target="_blank" rel="noopener">Python <span class="cert-issuer">— Kaggle</span></a><span class="num">Dec 2025</span></li>
+        <li><a class="cert-link" href="https://drive.google.com/file/d/1R42uhtbSqJEjMptOu6JqMsNb30spM7ZO/view?usp=drive_link" target="_blank" rel="noopener">Data Analytics <span class="cert-issuer">— Skillsetmaster</span></a><span class="num">Jan 2026</span></li>
+        <li><a class="cert-link" href="https://drive.google.com/file/d/1ddUH2V82PW8hcYGrb9kfIqjvJJwKPy_v/view?usp=drive_link" target="_blank" rel="noopener">Data Analytics Assessment <span class="cert-issuer">— LearnTube.ai</span></a><span class="num">Jan 2026</span></li>
+        <li><a class="cert-link" href="https://drive.google.com/file/d/1V2L2JvMFZGaY70tJwxugU0QpfYzRqPoF/view?usp=drive_link" target="_blank" rel="noopener">Time Series Forecasting Assessment <span class="cert-issuer">— LearnTube.ai</span></a><span class="num">Jan 2026</span></li>
+        <li><a class="cert-link" href="https://drive.google.com/file/d/1h56rtl51-iHPCHw4_7-a_sYA7WS31Rlo/view?usp=drive_link" target="_blank" rel="noopener">Onshape Hands-On Test Drive <span class="cert-issuer">— Onshape by PTC</span></a><span class="num">Aug 2026</span></li>
+        <li><a class="cert-link" href="https://drive.google.com/file/d/1rJFFeDrEzgTGfaipR2yNc8Snoy63UGL5/view?usp=drive_link" target="_blank" rel="noopener">Artificial Intelligence <span class="cert-issuer">— Skillumni</span></a><span class="num">Apr 2026</span></li>
       </ul>
       <div class="cert-cta">
-        <a href="https://drive.google.com/file/d/16gi2OSzmT9T17E82CEVO_iyl1owkSkUE/view?usp=drive_link" target="_blank">View all certificates</a>
-        <p>Hosted on Google Drive — set sharing to "Anyone with the link"</p>
+        <span class="verify-mark" aria-hidden="true">✓</span>
+        <strong>Verified credentials</strong>
+        <p>Select any credential to open its public certificate.</p>
       </div>
     </div>
   </section>
