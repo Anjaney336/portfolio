@@ -146,8 +146,8 @@
   .photo img{width:100%; height:210px; object-fit:cover; object-position:center; display:block;}
   .photo figcaption{font-size:0.74rem; color:var(--ink-soft); padding:8px 10px; border-top:1px solid var(--paper-line); flex:1;}
   /* Keep the vendor case study focused on decisions instead of a dense dashboard wall. */
-  .project:first-of-type .p-media .photo-grid{display:none;}
-  .project:first-of-type .p-media::after{content:"CONCENTRATION  65.3% of purchase spend sits with the top 10 vendors   •   WORKING CAPITAL  $15.6M remains unsold   •   MARGIN OPPORTUNITY  280 high-margin, low-volume brands"; display:block; border:1px solid var(--paper-line); border-left:3px solid var(--blue); background:#fbfcfd; color:var(--ink-soft); padding:16px 18px; font-family:'IBM Plex Mono',monospace; font-size:.78rem; line-height:1.8;}
+  .vendor-project .p-media .photo-grid{display:none;}
+  .vendor-project .p-media::after{content:"CONCENTRATION  65.3% of purchase spend sits with the top 10 vendors   •   WORKING CAPITAL  $15.6M remains unsold   •   MARGIN OPPORTUNITY  280 high-margin, low-volume brands"; display:block; border:1px solid var(--paper-line); border-left:3px solid var(--blue); background:#fbfcfd; color:var(--ink-soft); padding:16px 18px; font-family:'IBM Plex Mono',monospace; font-size:.78rem; line-height:1.8;}
 
   /* ---------- Spec table ---------- */
   .spec-wrap{padding:0 26px 22px 26px;}
@@ -332,7 +332,7 @@
     </div>
 
     <!-- Vendor Analytics -->
-    <div class="project">
+    <div class="project vendor-project">
       <div class="p-head">
         <div>
           <h3 class="p-title">Vendor Performance Analytics</h3>
@@ -950,3 +950,4 @@
 
 </body>
 </html>
+
