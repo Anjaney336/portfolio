@@ -343,6 +343,7 @@
     html{scroll-behavior:auto;}
     *,*::before,*::after{transition:none!important;}
   }
+ .portfolio-nav{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.portfolio-nav a{color:#ecf1f5;border:1px solid #7793a6;padding:7px 13px;text-decoration:none;font:13px/1.5 Arial,sans-serif}.case-status{display:inline-block;background:#e7efec;color:#285547;padding:5px 9px;font:12px/1.4 Arial,sans-serif;margin:8px 0}
 </style>
 </head>
 <body>
@@ -405,8 +406,8 @@
 
   <div class="wrap hero-inner">
     <span class="hero-eyebrow">REAL ESTATE &amp; DATA ANALYTICS — 2026</span>
-    <h1>Anjaney Malhotra</h1>
-    <p class="hero-role">Mechanical Engineering undergraduate applying Python, data analysis and machine learning to investment research, property underwriting and risk analysis. Seeking an internship from May 2027 across India.</p>
+    <h1>Anjaney Malhotra</h1><nav class="portfolio-nav" aria-label="Portfolio sections"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="Anjaney_Malhotra_Real_Estate_Resume.pdf">Resume</a><a href="mailto:anjaneymalhotra@gmail.com">Contact</a></nav>
+    <p class="hero-role">Engineering judgment, investment analysis and reproducible research. I build property underwriting models and test quantitative ideas with Python, statistics and explicit risk assumptions.</p>
     <div class="hero-meta">
       <div><span class="label">Institution</span>VIT Vellore · B.Tech Mechanical Eng. · 2024–2028</div>
       <div><span class="label">CGPA</span>8.86 / 10</div>
@@ -425,8 +426,8 @@
 <div class="tb-strip wrap" style="max-width:1040px; margin:0 auto;">
   <div class="tb-cell"><span class="label">Phone</span><a href="tel:+919599366178">+91 9599366178</a></div>
   <div class="tb-cell"><span class="label">LinkedIn</span><a href="https://linkedin.com/in/anjaney-malhotra93b24a283" target="_blank">/in/anjaney-malhotra</a></div>
-  <div class="tb-cell"><span class="label">Focus areas</span>Data analytics · ML · Robotics · CAD</div>
-  <div class="tb-cell"><span class="label">Available for</span>Internships &amp; research collaborations</div>
+  <div class="tb-cell"><span class="label">Focus areas</span>Real estate · Quant research · Data analytics</div>
+  <div class="tb-cell"><span class="label">Available for</span>May 2027 · Across India</div>
 </div>
 
 <div class="wrap">
@@ -451,12 +452,17 @@
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Projects</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Selected investment and analytics work</h2></div>
     <p class="sec-intro">Selected work in real estate underwriting, portfolio optimisation, business analytics, machine learning and engineering.</p>
 
-    <div class="project" id="real-estate-underwriting">
+    <div class="project" id="quant-research">
+<div class="p-head"><div><h3 class="p-title">Indian Real Estate Relative-Value Research</h3><div class="p-sub">Cointegration · Kalman filtering · Walk-forward validation</div><span class="case-status">Historical baseline published, including negative findings</span></div><a class="p-link" href="quant-research/">Explore research →</a></div>
+<div class="p-body"><div class="p-desc"><p>Can a statistical relative-value signal survive execution costs and out-of-sample testing? A Python research engine connects pair selection, adaptive hedge ratios and a cost-aware trading ledger.</p><ul><li>1,675 historical out-of-sample observations with all tested thresholds disclosed.</li><li>21 tests covering signal timing, future-data mutation, risk metrics and missing data.</li><li>Rate-regime and distribution-yield overlays validated separately on synthetic inputs.</li></ul><p><strong>Finding:</strong> the baseline did not establish a robust edge after costs. Borrow availability is hypothetical and documented.</p><p><a href="https://github.com/Anjaney336/india-realestate-quant-backtest">Read source, tests and data limitations</a></p></div><div class="p-stats"><div class="stat"><span class="num">252 / 63</span><span class="num-label">Train / test observations</span></div><div class="stat"><span class="num">1,000</span><span class="num-label">Block-bootstrap samples</span></div><div class="stat"><span class="num">21 tests</span><span class="num-label">Engineering checks</span></div><div class="stat"><span class="num">5 variants</span><span class="num-label">Threshold / cost experiments</span></div></div></div>
+<div class="p-stack"><span class="chip">Python</span><span class="chip">Statsmodels</span><span class="chip">Kalman filter</span><span class="chip">HMM</span><span class="chip">Research validation</span></div></div>
+
+<div class="project" id="real-estate-underwriting">
       <div class="p-head"><div><h3 class="p-title">Bengaluru Office Acquisition Underwriting</h3><div class="p-sub">Five-year cash flows · Debt coverage · Investment memo</div></div><a class="p-link" href="real-estate-underwriting/">Read investment case →</a></div>
-      <div class="p-body"><div class="p-desc"><p>Does the entry price compensate for lease-rollover and financing risk? This illustrative acquisition case models rental income, operating expenses, tenant improvements, leasing costs, amortizing debt and disposal proceeds.</p><ul><li>Three scenarios and a 25-cell rent-growth / exit-cap sensitivity grid.</li><li>2,000 correlated stress simulations with auditable CSV outputs.</li><li>Ten automated tests covering calculation accuracy, reconciliation and edge cases.</li></ul><p><strong>Finding:</strong> the INR 100 crore case fails the stated screens; the modeled entry-price ceiling is INR 83.53 crore. All property inputs are illustrative, not observed market data.</p><p><a href="https://github.com/Anjaney336/portfolio/tree/main/real-estate-underwriting">Review Python source, assumptions and tests</a></p></div>
+      <div class="p-body"><div class="p-desc"><p>Does the entry price compensate for lease-rollover and financing risk? This illustrative acquisition case models rental income, operating expenses, tenant improvements, leasing costs, amortizing debt and disposal proceeds.</p><ul><li>Three scenarios and a 25-cell rent-growth / exit-cap sensitivity grid.</li><li>2,000 correlated stress simulations with auditable CSV outputs.</li><li>Ten automated tests covering calculation accuracy, reconciliation and edge cases.</li></ul><p><strong>Finding:</strong> the INR 100 crore case fails the stated screens; the modeled entry-price ceiling is INR 83.53 crore. All property inputs are illustrative, not observed market data.</p><p><a href="https://github.com/Anjaney336/bengaluru-office-underwriting">Review Python source, assumptions and tests</a></p></div>
       <div class="p-stats"><div class="stat"><span class="num">5 years</span><span class="num-label">Holding period</span></div><div class="stat"><span class="num">2,000</span><span class="num-label">Stress simulations</span></div><div class="stat"><span class="num">1.04x</span><span class="num-label">Base minimum NOI DSCR</span></div><div class="stat"><span class="num">25</span><span class="num-label">Sensitivity combinations</span></div></div></div>
       <div class="p-stack"><span class="chip">Python</span><span class="chip">DCF / NPV</span><span class="chip">Debt schedules</span><span class="chip">Scenario analysis</span><span class="chip">Investment research</span></div>
     </div>

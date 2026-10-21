@@ -1,0 +1,137 @@
+{
+  "label": "HISTORICAL RESEARCH \u2014 HYPOTHETICAL BORROW / VENDOR ADJUSTED PRICES",
+  "mode": "historical",
+  "period_start": "2020-01-14",
+  "period_end": "2026-10-19",
+  "config": {
+    "train": 252,
+    "test": 63,
+    "entry_z": 2.0,
+    "exit_z": 0.25,
+    "stop_z": 4.0,
+    "max_gross": 0.8,
+    "max_leg": 0.5,
+    "initial_nav": 1000000.0,
+    "participation": 0.01,
+    "brokerage_bps": 3.0,
+    "slippage_bps": 10.0,
+    "other_fees_bps": 2.0,
+    "stt_buy_bps": 10.0,
+    "stt_sell_bps": 10.0,
+    "borrow_annual": 0.06,
+    "hypothetical_shorts": true
+  },
+  "rates_enabled": false,
+  "yield_spread_enabled": false,
+  "metrics": {
+    "observations": 1675,
+    "total_return": -0.0462783412058656,
+    "cagr": -0.007103379197314075,
+    "sharpe": -0.13481537932309104,
+    "sortino": -0.19543337768463337,
+    "max_drawdown": 0.10708501710291518,
+    "calmar": -0.06633401562131981,
+    "volatility": 0.04528304210989733
+  },
+  "bootstrap": {
+    "cagr": [
+      -0.02662944858828073,
+      -0.0067262802802685595,
+      0.013795194036615194
+    ],
+    "sharpe": [
+      -0.6060485059280911,
+      -0.1385795083187415,
+      0.3047889476716291
+    ],
+    "max_drawdown": [
+      0.0499872197537489,
+      0.09754477388923777,
+      0.1847084029446642
+    ]
+  },
+  "dsr": {
+    "probability": 0.0863636787207529,
+    "daily_sr": -0.008492570633231862,
+    "expected_max_daily_sr": 0.02493146547687828,
+    "trials": 5,
+    "assumption": "Approximate independent-trial / IID-return calibration"
+  },
+  "trial_registry": [
+    {
+      "entry_z": 1.5,
+      "observations": 1675,
+      "total_return": 0.19350046719174152,
+      "cagr": 0.02697007110674976,
+      "sharpe": 0.49542395622369556,
+      "sortino": 0.7808881512864124,
+      "max_drawdown": 0.06761869542484855,
+      "calmar": 0.3988552416945741,
+      "volatility": 0.056988848648151194
+    },
+    {
+      "entry_z": 2.0,
+      "observations": 1675,
+      "total_return": -0.0462783412058656,
+      "cagr": -0.007103379197314075,
+      "sharpe": -0.13481537932309104,
+      "sortino": -0.19543337768463337,
+      "max_drawdown": 0.10708501710291518,
+      "calmar": -0.06633401562131981,
+      "volatility": 0.04528304210989733
+    },
+    {
+      "entry_z": 2.5,
+      "observations": 1675,
+      "total_return": 0.05830199497284316,
+      "cagr": 0.008561675828072657,
+      "sharpe": 0.31591885679697246,
+      "sortino": 0.5367180647861335,
+      "max_drawdown": 0.06461070718934525,
+      "calmar": 0.13251171826648162,
+      "volatility": 0.028241111226557557
+    }
+  ],
+  "transaction_cost": 83448.53321956845,
+  "borrow_cost": 13497.501967792106,
+  "turnover": 33379413.28782738,
+  "final_gross_exposure": 0.0,
+  "selected_folds": 13,
+  "input_sha256": "421845dc401b5e0c55522b8c3dfce12402e0daf309e776499652594b227af5f4",
+  "cost_sensitivity": [
+    {
+      "slippage_bps": 5.0,
+      "observations": 1675,
+      "total_return": -0.030059283426414285,
+      "cagr": -0.004581188955210647,
+      "sharpe": -0.07931002215559191,
+      "sortino": -0.11584669829945232,
+      "max_drawdown": 0.0946488976030797,
+      "calmar": -0.04840192618431071,
+      "volatility": 0.04509577264554459
+    },
+    {
+      "slippage_bps": 10.0,
+      "observations": 1675,
+      "total_return": -0.0462783412058656,
+      "cagr": -0.007103379197314075,
+      "sharpe": -0.13481537932309104,
+      "sortino": -0.19543337768463337,
+      "max_drawdown": 0.10708501710291518,
+      "calmar": -0.06633401562131981,
+      "volatility": 0.04528304210989733
+    },
+    {
+      "slippage_bps": 25.0,
+      "observations": 1675,
+      "total_return": -0.09336273175249077,
+      "cagr": -0.014637624330079535,
+      "sharpe": -0.2978779690917409,
+      "sortino": -0.4216417892587054,
+      "max_drawdown": 0.1434096919341914,
+      "calmar": -0.10206858499352,
+      "volatility": 0.045958954199683835
+    }
+  ],
+  "trial_count_including_cost_stress": 5
+}
