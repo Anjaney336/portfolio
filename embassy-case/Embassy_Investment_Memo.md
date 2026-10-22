@@ -1,0 +1,60 @@
+# Embassy REIT / Manyata Office Investment Case
+Investment committee research memorandum | Anjaney Malhotra | 22 October 2026
+## 1. Decision and investment thesis
+Recommendation: retain Embassy REIT on the research shortlist; do not treat the historical NAV comparison as a current buy signal. For the separate Manyata teaching acquisition, do not approve the assumed entry price against the model's 10% unlevered hurdle. The base forecast returns approximately 7.8% unlevered and 7.7% levered; an apparent asset-quality advantage is insufficient when acquisition economics do not clear the required return.
+This is a public-data research exercise, not an actual offered transaction or a recommendation to trade. The REIT analysis uses March valuation and June operating/price observations released by July 2026. It does not represent an executable October entry, and information published after the historical price date creates look-ahead if used as a backtest.
+The thesis to test is that a large operating office campus can produce durable rental cash flows, with retention and leasing execution creating value. The counter-thesis is that financing, rollover expenditure and terminal pricing absorb the benefit. The Excel model makes this tension visible rather than selecting assumptions to produce an attractive return.
+## Scope and decision gates
+The acquired interest is a hypothetical completed-office exposure valued at the disclosed completed-office GAV. Hotels and development are excluded. Only the occupied office cohort generates forecast rent; vacant-area lease-up is deliberately omitted. No tenant-level contractual data or actual debt allocation is asserted.
+Before an investment decision: obtain a dated current price or actual offer, a verified lease-expiry ladder, tenant concentration, fit-out obligations, tax and transaction-cost advice, lender terms and engineering diligence. Refresh all valuation dates consistently. The case is suitable as an internship writing/model sample, with these limitations presented prominently.
+## Value creation workstreams
+Prioritise tenant retention, recoverability of operating costs, building-system condition and renewal capital. Track rental growth separately from occupancy improvements. Mechanical-engineering diligence should assess HVAC efficiency, planned replacements and downtime exposure; no engineering savings are assumed without an asset inspection.
+
+
+---
+
+# 2. Public evidence and valuation reconciliation
+## Reported facts and dates
+Embassy's March 2026 bridge is INR70,540 crore GAV + 5,202 other assets - 6,757 other liabilities - 22,385 gross debt = INR46,600 crore NAV. Dividing by 947,893,743 units gives INR491.616 per unit, consistent with reported INR491.62 after rounding. [S1, PDF p38]
+The issuer reports a June 30 NSE closing price of INR438.04. Relative to the March NAV this is a 10.90% discount. It is a cross-date comparison, not a June or October contemporaneous NAV estimate. No assumed market return is attached to convergence. [S2, PDF p55]
+June amortised-cost debt of INR233,491 million less disclosed cash deduction of INR14,697 million gives INR218,794 million versus reported net debt INR218,795 million: a one-million displayed rounding residual. Principal debt is INR234,039 million, INR548 million above amortised cost. Do not mix these bases or subtract cash twice. [S2, PDF pp67-68]
+## Operating bridge
+Manyata completed office area is 14.6 million sqft, area occupancy 93%, in-place rent INR98 and issuer-estimated market rent INR105 per sqft/month. Quarterly office revenue and NOI are INR4,127 million and INR3,492 million. Completed-office GAV is INR242,591 million, dated March. [S2, PDF pp58,63]
+Analyst calculations: occupied area proxy 13.578 million sqft; annualised NOI INR1,396.8 crore; annual gross rental proxy INR1,596.77 crore. Multiplying one quarter by four is an assumption, not forward guidance. Net expense proxy is gross rental proxy less annualised NOI. This differs from reported gross expenses because it also absorbs revenue/rent-definition differences. The model exposes this bridge instead of pretending it is a tenant ledger.
+## Market and comparable evidence
+Knight Frank's Q1 2026 report records Bengaluru office rent growth of 7% year on year and 9.2 million sqft of transactions. Its 13.9% vacancy figure concerns the eight-city aggregate, not Bengaluru or Manyata. [S3, PDF pp4-6]
+The campus rental mark-to-market indication is not an independent signed-lease comparable. No independently verified asset transaction cap-rate set is supplied. Exit caps in the workbook are explicitly analyst sensitivities. Annualised NOI / completed GAV is a descriptive yield, not a transaction cap-rate comparable.
+
+
+---
+
+# 3. Acquisition model and underwriting judgement
+## Forecast specification
+The workbook contains 10 holding years plus year-11 NOI for terminal valuation, annual rent and rollover costs, amortising debt, levered/unlevered returns, scenarios and two native two-variable sensitivity tables. Every output is formula-driven. Public inputs and transformations are on Source and NAV.
+Base assumptions: entry equals completed-office GAV; 2% acquisition costs; 40% LTV; 8% fixed debt cost; 20-year amortisation; 1% debt fee; 2% selling costs; 6.5% exit cap. Contract escalation is 3% annually. The aggregate occupied cohort expires after year five, with 70% renewal and six months' downtime for non-renewals. These are teaching assumptions, not known leases or lender terms.
+Further assumptions: INR30/sqft annual reserve, INR500/sqft tenant improvements, leasing fee 10% of new annual rent, 3% annual expense/reserve growth and a 10% unlevered discount rate. Taxes, refinancing, fund fees and development are excluded. No general vacancy haircut is layered over rollover downtime.
+## Results and interpretation
+Base: 7.68% levered IRR; 7.84% unlevered IRR; 1.97x equity multiple; minimum annual DSCR 1.41x; year-one cash-on-cash 2.43%; unlevered NPV minus INR3,594.66 crore at the assumed hurdle. Returns are simulated, pre-tax and not achieved investment results.
+Upside: 5% market-rent growth, 6% exit cap and 7.5% debt yield 11.80% levered IRR. Downside: 1% growth, 7.5% cap, 9.5% debt and 2% collection loss yield 1.12% levered IRR and 1.15x minimum DSCR. These are coherent scenarios, not probability-weighted forecasts.
+The base cap/growth table spans approximately 3.45%-11.60% levered IRR across the stated grid. Debt can reduce returns when its marginal cost exceeds property economics. A large terminal value, one aggregate rollover and an uncertain net-expense bridge warrant conservative conclusions.
+## Conditional decision
+Reject automatic approval at the assumed price. Re-underwrite using actual contractual cash flows and obtain evidence before changing the hurdle or exit cap. A lower purchase price, better verified cash generation or cheaper financing may improve the case; none is assumed to be available. Distinguish the property acquisition decision from buying diversified REIT units.
+
+
+---
+
+# 4. Risks, technical review and reproducibility
+## Risk register and diligence requests
+Lease risk: the model uses one proxy cohort. Request actual expiry, break-option, escalation and security-deposit schedules; split material expiries into cohorts and test clustered departures.
+Capital risk: reserve and TI assumptions are unverified. Request condition surveys, HVAC replacement cycles, refurbishment commitments and landlord-versus-tenant responsibility. Stress both cost and timing.
+Funding risk: annual fixed-rate debt is simplified. Request covenants, floating-rate resets, refinancing maturity and prepayment penalties. Annual NOI DSCR excludes exit balloon and does not equal the lender's covenant definition.
+Valuation risk: March GAV, June operating data and June price are not contemporaneous. Refresh the NAV bridge before using a discount as a decision input. A single issuer's rental estimate is insufficient cap-rate evidence.
+Data risk: rounded area and occupancy create a proxy, not measured leased area. Four-quarter annualisation ignores seasonality and growth. Exclude confidential employer records from public repositories.
+## Technical review performed
+A separate scalar Python calculation reproduced all six reported return metrics for base, upside and downside to within 0.00001 absolute units. Cash funding, debt roll-forward, sale balloon and equity-flow checks passed; year-one NOI matches the annualisation bridge. The native sensitivity-table centres match the base return in the spreadsheet engine.
+This is an automated consistency review, not an independent professional opinion. Native desktop Excel calculation has not been verified. Set Excel calculation to Automatic including Data Tables, run Ctrl+Alt+F9, verify both base table centres equal Returns D6 and confirm Checks D14:D15 are zero. Save the recalculated file with reviewer/date. An independent real-estate professional still needs to assess market assumptions and lease modelling.
+## Sources and reproduction
+All sources below are public and were accessed 22 October 2026. Original reports are linked, not redistributed. S1: Embassy REIT FY2026 earnings/valuation package, filed 27 April 2026: https://www.embassyofficeparks.com/wp-content/uploads/2026/06/press_release__-_final.pdf
+S2: Embassy REIT Q1 FY2027 earnings and supplemental databook, filed 30 July 2026: https://www.embassyofficeparks.com/wp-content/uploads/2026/09/se_filing_-__press_release_and_earnings_presentation.pdf
+S3: Knight Frank, India Real Estate Q1 2026: https://content.knightfrank.com/research/3092/documents/en/india-real-estate-office-and-residential-market-jan-mar-2026-12790.pdf
+Workbook: Embassy_Manyata_Acquisition_Case.xlsx. Calculation evidence: Embassy_Model_Validation.json and Independent_Model_Check.json. Resume wording should call this a public-data case with illustrative acquisition terms and pending native-Excel verification.

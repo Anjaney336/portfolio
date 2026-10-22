@@ -436,17 +436,15 @@
 
   <section id="experience">
     <div class="sec-head"><h2 class="sec-title">Experience and internship focus</h2></div>
-    <p><strong>Alvionx · Quantitative Research Intern</strong><br>September 2026–present</p>
-    <p>Backtesting algorithmic trading strategies using the CoinDCX platform; studying liquidity, technical indicators and candlestick patterns; applying probability concepts to risk management and trading decisions.</p>
+    <p><strong>Alvionx · Fintech Intern</strong><br>September 2026–present</p>
+    <p>Journalled 172 completed trades across backtesting work, including liquidation-based crypto signals and a Reliance price-trigger strategy. Used CoinDCX as a platform and EMA, candlestick and price-action rules with a target 1:2 risk-to-reward. The count is self-reported; no profitability claim is made.</p>
     <p><strong>Education:</strong> B.Tech Mechanical Engineering, VIT Vellore · 2024–2028 (expected) · CGPA 8.86/10.</p>
     <p><strong>Target roles:</strong> real estate investment analysis, valuation, capital markets, asset management and data analytics internships from May 2027. Open to opportunities across India.</p>
     <div class="report-links"><a class="report-btn" href="Anjaney_Malhotra_Real_Estate_Resume.pdf">Download investment resume</a><a class="report-btn" href="real-estate-underwriting/">Explore underwriting case</a></div>
   </section>
   <section>
     <p style="max-width:680px; font-size:1.05rem; color:var(--ink-soft);">
-      This sheet documents five build-and-analyze projects — from a $451.6M vendor data mart to a
-      four-mode autonomous robotics platform — with the methods, tooling and measured results behind each.
-      Every figure below is pulled directly from the underlying analysis or hardware log, not illustrative.
+      Selected investment, analytics and engineering projects. Each case distinguishes observed data, model assumptions and unfinished validation.
     </p>
   </section>
 
@@ -454,6 +452,8 @@
   <section id="projects">
     <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Selected investment and analytics work</h2></div>
     <p class="sec-intro">Selected work in real estate underwriting, portfolio optimisation, business analytics, machine learning and engineering.</p>
+
+    <div class="project" id="embassy-case"><div class="p-head"><div><h3 class="p-title">Embassy REIT / Manyata — Investment Committee Case</h3><p class="p-sub">Public filings · NAV reconciliation · Excel acquisition model</p></div><a class="p-link" href="embassy-case/">Read memo &amp; model →</a></div><div class="p-body"><div class="p-desc"><p>Four-page investment memo and a 10-year formula-based acquisition case. Reconciles reported NAV, units and debt; distinguishes operating disclosures from assumed lease and financing terms.</p><p><strong>Conclusion:</strong> the illustrative base case misses its 10% unlevered hurdle. Levered IRR is 7.68%, equity multiple 1.97× and minimum DSCR 1.41×. These are simulated outcomes, not realised returns.</p><p>Three scenarios, two native sensitivity tables and an independent Python arithmetic check. Desktop Excel verification and professional review remain in progress.</p></div></div></div>
 
     <div class="project" id="quant-research">
 <div class="p-head"><div><h3 class="p-title">Indian Real Estate Relative-Value Research</h3><div class="p-sub">Cointegration · Kalman filtering · Walk-forward validation</div><span class="case-status">Historical baseline published, including negative findings</span></div><a class="p-link" href="quant-research/">Explore research →</a></div>
@@ -577,228 +577,17 @@
     </div>
 
     <!-- Opti-Workbench -->
-    <div class="project">
-      <div class="p-head">
-        <div>
-          <h3 class="p-title">Opti-Workbench &mdash; CVaR Portfolio Optimisation Benchmark</h3>
-          <p class="p-sub">Exact MILP vs. metaheuristics under matched budgets &middot; blind-review research manuscript</p>
-        </div>
-        <a class="p-link" href="https://github.com/Anjaney336/opti-workbench" target="_blank">View repo &rarr;</a>
-      </div>
-      <div class="p-body">
-        <div class="p-desc">
-          <p><strong>Use case.</strong> Allocate capital across 100 U.S. metropolitan housing markets under a tail-risk
-          objective. The data are FHFA purchase-only house-price indexes &mdash; 139 quarterly returns spanning
-          1991Q2&ndash;2025Q4 &mdash; evaluated over 24 rolling origins with a 40-quarter training window, 4-quarter
-          holdout and 4-quarter step. A four-index listed-REIT panel is retained as a tradable robustness domain.</p>
-          <p><strong>The research question.</strong> Portfolio papers routinely compare algorithms before establishing
-          whether the underlying program is convex or mixed-integer. This project reverses that: it first fixes the
-          formulation, solves it exactly, and only then asks when stochastic search is worth reaching for.</p>
-          <p><strong>Why it matters.</strong> The metropolitan indexes are proxies, not directly investable assets, so
-          the study is framed as a computational benchmark rather than an investment claim &mdash; a distinction the
-          manuscript enforces throughout.</p>
-        </div>
-        <div class="p-figure">
-          <div class="p-stats">
-            <div class="stat"><span class="num">100</span><span class="num-label">metro indices</span></div>
-            <div class="stat"><span class="num">139</span><span class="num-label">quarterly returns</span></div>
-            <div class="stat"><span class="num">24</span><span class="num-label">rolling origins</span></div>
-            <div class="stat"><span class="num">5,698</span><span class="num-label">evidence records</span></div>
-            <div class="stat"><span class="num">1,200</span><span class="num-label">boundary-study rows</span></div>
-            <div class="stat"><span class="num">864</span><span class="num-label">exact sensitivity solves</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- OPTIMISATION MODELS -->
-      <div class="spec-wrap">
-        <p class="media-label">Optimisation models</p>
-        <div class="model-grid">
-          <div class="model-card">
-            <h4>P3 &mdash; continuous allocation <span class="tagpill">Linear program</span></h4>
-            <p class="model-obj">max<sub>w</sub> &nbsp; A&middot;r&#772;<sup>T</sup>w &minus; &lambda;&middot;CVaR<sub>&alpha;</sub>(w) &minus; c&middot;&tau;(w, w<sup>0</sup>)</p>
-            <p>Annualised mean return, penalised by empirical Conditional Value-at-Risk and by proportional turnover
-            against an equal-weight reference. Rockafellar&ndash;Uryasev's auxiliary-threshold representation makes the
-            tail term linear, so the whole problem is an LP with a certifiable global optimum.</p>
-            <ul class="model-cons">
-              <li>&Sigma;w<sub>i</sub> = 1, long-only, 0 &le; w<sub>i</sub> &le; 15%</li>
-              <li>&alpha; = 0.90 &middot; &lambda; = 1 &middot; c = 25 bp per unit turnover</li>
-            </ul>
-          </div>
-          <div class="model-card">
-            <h4>P4 &mdash; cardinality-constrained <span class="tagpill">Mixed-integer LP</span></h4>
-            <p class="model-obj">same objective, plus binary selectors z<sub>i</sub> &isin; {0,1}</p>
-            <p>Adds a genuine combinatorial structure: a position is either off, or on with a real minimum size. This
-            is what turns the crossover question from rhetorical into substantive &mdash; and what the exact comparator
-            is there to anchor.</p>
-            <ul class="model-cons">
-              <li>&#8467;<sub>i</sub>z<sub>i</sub> &le; w<sub>i</sub> &le; u<sub>i</sub>z<sub>i</sub> &mdash; 2% buy-in floor, 15% cap</li>
-              <li>&Sigma;z<sub>i</sub> &le; K = 10 active positions</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- SOLVERS -->
-      <div class="spec-wrap" style="padding-top:0;">
-        <p class="media-label">Solvers compared under matched 504-call budgets</p>
-        <table class="spec">
-          <thead><tr><th>Method</th><th>Mechanism</th><th>Mean gap to exact P4</th></tr></thead>
-          <tbody>
-            <tr><td>EXACT_P4</td><td>HiGHS branch-and-bound via <span class="num">scipy.optimize.milp</span>; status logged on every solve</td><td class="pin">0.000000</td></tr>
-            <tr><td>P3_SEEDED_HYBRID</td><td>Relaxation seed &rarr; 10 PSO iterations &rarr; 10 GA generations, population carried forward</td><td class="pin">0.000077</td></tr>
-            <tr><td>P3_SEEDED_PSO</td><td>Exact P3 solution projected into the P4 feasible set as the first particle</td><td class="pin">0.000097</td></tr>
-            <tr><td>P3_SEEDED_GA</td><td>Same seed, genetic search &mdash; tournament-3, convex crossover, elitism</td><td class="pin">0.000160</td></tr>
-            <tr><td>GA</td><td>Unseeded genetic algorithm, mutation rate max(1/n, 0.02)</td><td class="pin">0.006171</td></tr>
-            <tr><td>PSO</td><td>Unseeded swarm, inertia 0.70, cognitive/social 1.45</td><td class="pin">0.010642</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- CHARTS -->
-      <div class="p-media">
-        <p class="media-label">Results</p>
-        <div class="chart-row">
-          <div class="chart-box">
-            <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
-              <text x="0" y="14" font-family="Space Grotesk" font-size="11" fill="#1c2530" font-weight="600">Mean optimality gap (log scale)</text>
-              <line x1="96" y1="30" x2="96" y2="175" stroke="#4a5563" stroke-width="1"/>
-              <g font-family="Space Grotesk" font-size="8.5" fill="#4a5563">
-                <text x="92" y="45" text-anchor="end">PSO</text>
-                <text x="92" y="67" text-anchor="end">GA</text>
-                <text x="92" y="89" text-anchor="end">Seeded GA</text>
-                <text x="92" y="111" text-anchor="end">Seeded PSO</text>
-                <text x="92" y="133" text-anchor="end">Seeded HYBRID</text>
-                <text x="92" y="155" text-anchor="end">EXACT_P4</text>
-              </g>
-              <g>
-                <rect x="96" y="36" width="176" height="13" fill="#b5652f"/>
-                <rect x="96" y="58" width="162" height="13" fill="#c98a55"/>
-                <rect x="96" y="80" width="97" height="13" fill="#4f8fdb"/>
-                <rect x="96" y="102" width="90" height="13" fill="#2f6bb0"/>
-                <rect x="96" y="124" width="88" height="13" fill="#1f4e8c"/>
-                <rect x="96" y="146" width="3" height="13" fill="#12335e"/>
-              </g>
-              <g font-family="IBM Plex Mono" font-size="8" fill="#12335e">
-                <text x="277" y="46">1.06e-2</text>
-                <text x="263" y="68">6.17e-3</text>
-                <text x="198" y="90">1.60e-4</text>
-                <text x="191" y="112">9.7e-5</text>
-                <text x="189" y="134">7.7e-5</text>
-                <text x="104" y="156">0 (exact)</text>
-              </g>
-              <text x="0" y="196" font-family="Space Grotesk" font-size="8.5" fill="#8a8f95">Relaxation seeding closes ~99% of the heuristic gap; the exact solver closes all of it.</text>
-            </svg>
-            <p class="chart-cap">Seeding transfers structure from the convex relaxation into the combinatorial problem</p>
-          </div>
-          <div class="chart-box">
-            <svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
-              <text x="0" y="14" font-family="Space Grotesk" font-size="11" fill="#1c2530" font-weight="600">Support persistence (mean Jaccard)</text>
-              <line x1="30" y1="160" x2="330" y2="160" stroke="#4a5563" stroke-width="1"/>
-              <line x1="30" y1="30" x2="30" y2="160" stroke="#4a5563" stroke-width="1"/>
-              <g>
-                <rect x="48" y="105" width="38" height="55" fill="#c98a55"/>
-                <rect x="103" y="90" width="38" height="70" fill="#b5652f"/>
-                <rect x="158" y="47" width="38" height="113" fill="#4f8fdb"/>
-                <rect x="213" y="44" width="38" height="116" fill="#2f6bb0"/>
-                <rect x="268" y="44" width="38" height="116" fill="#1f4e8c"/>
-              </g>
-              <g font-family="IBM Plex Mono" font-size="7.5" fill="#12335e" text-anchor="middle">
-                <text x="67" y="101">0.104</text><text x="122" y="86">0.144</text>
-                <text x="177" y="43">0.231</text><text x="232" y="40">0.236</text><text x="287" y="40">0.236</text>
-              </g>
-              <g font-family="Space Grotesk" font-size="7.5" fill="#4a5563" text-anchor="middle">
-                <text x="67" y="172">PSO</text><text x="122" y="172">GA</text>
-                <text x="177" y="172">Sd GA</text><text x="232" y="172">Sd HYB</text><text x="287" y="172">Sd PSO</text>
-              </g>
-              <text x="0" y="196" font-family="Space Grotesk" font-size="8.5" fill="#8a8f95">Unique supports over 720 runs: 708 / 718 unseeded vs 110 / 72 / 67 seeded.</text>
-            </svg>
-            <p class="chart-cap">Seeding buys repeatability, not diversification &mdash; a distinction the audit makes explicit</p>
-          </div>
-        </div>
-        <div class="chart-row">
-          <div class="chart-box">
-            <svg viewBox="0 0 340 190" xmlns="http://www.w3.org/2000/svg">
-              <text x="0" y="14" font-family="Space Grotesk" font-size="11" fill="#1c2530" font-weight="600">Finite-sample CVaR sensitivity (T=40)</text>
-              <line x1="46" y1="145" x2="330" y2="145" stroke="#4a5563" stroke-width="1"/>
-              <line x1="46" y1="30" x2="46" y2="145" stroke="#4a5563" stroke-width="1"/>
-              <polyline points="80,44 188,86 300,128" fill="none" stroke="#1f4e8c" stroke-width="2"/>
-              <g fill="#1f4e8c">
-                <circle cx="80" cy="44" r="4"/><circle cx="188" cy="86" r="4"/><circle cx="300" cy="128" r="4"/>
-              </g>
-              <g font-family="IBM Plex Mono" font-size="8" fill="#12335e">
-                <text x="66" y="36">0.06778</text><text x="174" y="78">0.06582</text><text x="272" y="120">0.06388</text>
-              </g>
-              <g font-family="Space Grotesk" font-size="8" fill="#4a5563" text-anchor="middle">
-                <text x="80" y="158">&alpha;=0.85</text><text x="188" y="158">&alpha;=0.90</text><text x="300" y="158">&alpha;=0.95</text>
-                <text x="80" y="169">~6 tail obs</text><text x="188" y="169">~3 tail obs</text><text x="300" y="169">~2 tail obs</text>
-              </g>
-              <text x="0" y="184" font-family="Space Grotesk" font-size="8.5" fill="#8a8f95">Exactness removes optimisation error, not tail-estimation error.</text>
-            </svg>
-            <p class="chart-cap">At &alpha;=0.90 with a 40-quarter window, the empirical tail holds roughly three observations</p>
-          </div>
-          <div class="chart-box">
-            <svg viewBox="0 0 340 190" xmlns="http://www.w3.org/2000/svg">
-              <text x="0" y="14" font-family="Space Grotesk" font-size="11" fill="#1c2530" font-weight="600">Conditional solver-competitiveness map</text>
-              <g font-family="Space Grotesk" font-size="7.5">
-                <text x="4" y="60" fill="#4a5563">n=10</text>
-                <text x="4" y="118" fill="#4a5563">n=25</text>
-                <rect x="38" y="34" width="70" height="40" fill="#dce8f5" stroke="#1f4e8c" stroke-width="0.8"/>
-                <rect x="112" y="34" width="70" height="40" fill="#dce8f5" stroke="#1f4e8c" stroke-width="0.8"/>
-                <rect x="186" y="34" width="70" height="40" fill="#dce8f5" stroke="#1f4e8c" stroke-width="0.8"/>
-                <rect x="260" y="34" width="70" height="40" fill="#dce8f5" stroke="#1f4e8c" stroke-width="0.8"/>
-                <rect x="38" y="92" width="70" height="40" fill="#f2e0cf" stroke="#b5652f" stroke-width="0.8"/>
-                <rect x="112" y="92" width="70" height="40" fill="#f2e0cf" stroke="#b5652f" stroke-width="0.8"/>
-                <rect x="186" y="92" width="70" height="40" fill="#f2e0cf" stroke="#b5652f" stroke-width="0.8"/>
-                <rect x="260" y="92" width="70" height="40" fill="#dce8f5" stroke="#1f4e8c" stroke-width="0.8"/>
-                <g fill="#12335e" text-anchor="middle" font-size="6.5">
-                  <text x="73" y="52">SEEDED</text><text x="73" y="61">COMPETITIVE</text>
-                  <text x="147" y="52">SEEDED</text><text x="147" y="61">COMPETITIVE</text>
-                  <text x="221" y="52">SEEDED</text><text x="221" y="61">COMPETITIVE</text>
-                  <text x="295" y="52">SEEDED</text><text x="295" y="61">COMPETITIVE</text>
-                  <text x="295" y="110">SEEDED</text><text x="295" y="119">COMPETITIVE</text>
-                </g>
-                <g fill="#8a4a1c" text-anchor="middle" font-size="6.5">
-                  <text x="73" y="110">EXACT</text><text x="73" y="119">DOMINANT</text>
-                  <text x="147" y="110">EXACT</text><text x="147" y="119">DOMINANT</text>
-                  <text x="221" y="110">EXACT</text><text x="221" y="119">DOMINANT</text>
-                </g>
-                <g fill="#4a5563" text-anchor="middle">
-                  <text x="73" y="147">64</text><text x="147" y="147">256</text><text x="221" y="147">504</text><text x="295" y="147">1008</text>
-                </g>
-                <text x="184" y="162" fill="#4a5563" text-anchor="middle" font-size="8">Budget (objective evaluations)</text>
-              </g>
-              <text x="0" y="182" font-family="Space Grotesk" font-size="8.5" fill="#8a8f95">No single monotone crossover: competitiveness depends on n, T and budget.</text>
-            </svg>
-            <p class="chart-cap">The headline finding &mdash; conditional competitiveness, not a universal winner</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGOR -->
-      <div class="spec-wrap">
-        <p class="media-label">Statistical inference &amp; reproducibility</p>
-        <table class="spec">
-          <tbody>
-            <tr><td>Inferential unit</td><td>Rolling origin (24 paired observations); 30 seeds collapsed by median to avoid pseudo-replication</td></tr>
-            <tr><td>Seeding effect vs PSO</td><td class="pin">+0.010565 &middot; 95% CI [0.009258, 0.012291] &middot; Holm p = 1.19e-7</td></tr>
-            <tr><td>Seeding effect vs GA</td><td class="pin">+0.006094 &middot; 95% CI [0.005580, 0.006832] &middot; rank-biserial = 1.00</td></tr>
-            <tr><td>Dependence handling</td><td>10,000 circular moving-block bootstrap resamples, block length &radic;O</td></tr>
-            <tr><td>Validation gate</td><td>Exactly 504 objective calls per row; feasibility residual 9.99e-16; max MIP gap 1.118e-5; all solver statuses zero</td></tr>
-            <tr><td>Lineage</td><td>SHA-256-pinned raw and processed data, frozen configs, immutable output directories &mdash; the runner fails closed on drift</td></tr>
-          </tbody>
-        </table>
-        <div class="notice" style="margin-top:18px;">
-          <strong>Headline result.</strong> At 100 assets and 40 scenarios the exact MILP is both the most accurate
-          <em>and</em> the fastest option &mdash; 0.055&nbsp;s median against 0.070&ndash;0.108&nbsp;s for the heuristics &mdash;
-          so the honest conclusion is to solve exactly where you can, and use the relaxation as a seed only where you
-          cannot. The manuscript explicitly refuses the stronger claim that any hybrid is universally superior.
-        </div>
-      </div>
-
-      <div class="p-stack">
-        <span class="chip">Python 3.12</span><span class="chip">SciPy / HiGHS</span><span class="chip">MILP</span><span class="chip">CVaR</span><span class="chip">PSO</span><span class="chip">Genetic algorithm</span><span class="chip">Wilcoxon + Holm</span><span class="chip">Block bootstrap</span><span class="chip">SHA-256 lineage</span>
-      </div>
+    <div class="project" id="opti-workbench">
+      <div class="p-head"><div><h3 class="p-title">Opti-Workbench — Constrained Portfolio Optimisation</h3>
+      <p class="p-sub">Empirical CVaR convex seeding · PSO / GA · Synthetic research</p></div>
+      <a class="p-link" href="https://github.com/Anjaney336/opti-workbench">View code and methodology →</a></div>
+      <div class="p-body"><div class="p-desc">
+      <p>Research application for constrained allocation with feasibility, concentration and tail-risk diagnostics. The implemented engine combines CVXPY convex surrogate seeds with heuristic refinement.</p>
+      <ul><li>Cardinality handled through subset enumeration, with shortlist screening for larger candidate sets.</li>
+      <li>Seed and final scoring objectives differ; results must be compared using the same objective and constraints.</li>
+      <li>Demo inputs are synthetic. Performance benchmarking and clean-environment reproduction remain in progress.</li></ul>
+      <p><strong>Documentation correction, 22 October 2026:</strong> earlier FHFA 100-metro and exact-MILP benchmark claims were unsupported by the audited code and have been withdrawn.</p>
+      </div></div><div class="p-stack"><span class="chip">Python</span><span class="chip">CVXPY</span><span class="chip">CVaR</span><span class="chip">PSO / GA</span></div>
     </div>
 
     <!-- Smart RC Car -->
