@@ -1,0 +1,58 @@
+{
+  "observations": 1675,
+  "baseline": {
+    "total_return": -0.0462783412058656,
+    "max_drawdown": -0.10708501710291518,
+    "annualized_vol": 0.04528304210989733
+  },
+  "risk_overlay_cost_scenarios": {
+    "0": {
+      "total_return": -0.03267330131800383,
+      "max_drawdown": -0.09434074332278919,
+      "annualized_vol": 0.03818356751918184
+    },
+    "5": {
+      "total_return": -0.03377501556986995,
+      "max_drawdown": -0.09535620409873613,
+      "annualized_vol": 0.038185044893653014
+    },
+    "10": {
+      "total_return": -0.03487554164811513,
+      "max_drawdown": -0.09637058842828694,
+      "annualized_vol": 0.03818679066914888
+    },
+    "25": {
+      "total_return": -0.038170002968583194,
+      "max_drawdown": -0.09940729352011113,
+      "annualized_vol": 0.03819363800544578
+    }
+  },
+  "scaled_days": 748,
+  "execution_stress_runs": 200,
+  "sources": [
+    {
+      "name": "Published listed-property strategy ledger; Yahoo-based upstream prices",
+      "link": "https://github.com/Anjaney336/india-realestate-quant-backtest/blob/main/results/historical/ledger.csv",
+      "access_date": "2026-10-24",
+      "sha256": "c9791ab4bb2db038f3f7180ac63df58206e7bbb48f0983b251338dc715bff9ba"
+    },
+    {
+      "name": "Synthetic execution snapshots",
+      "link": "https://github.com/Anjaney336/quant-execution-lab/blob/main/experiments.py",
+      "access_date": "2026-10-24"
+    }
+  ],
+  "assumptions": {
+    "ES_window": 252,
+    "tail_fraction": 0.05,
+    "daily_tail_budget": 0.005,
+    "warmup_scale": 1.0,
+    "extra_cost_bps": [
+      0,
+      5,
+      10,
+      25
+    ]
+  },
+  "limitations": "Counterfactual return-scaling overlay, not an order-level rerun. Baseline already includes costs; extra costs apply to scale changes. Execution snapshots are synthetic and not calibrated to Indian property stocks. No claim of profitable alpha."
+}

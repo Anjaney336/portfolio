@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Real Assets: Fundamentals &amp; Relative Value | Anjaney Malhotra</title><style>body{margin:0;background:#f4f3ed;color:#182c34;font:17px/1.6 Georgia,serif}main{max-width:1100px;margin:auto;padding:32px 24px}h1,h2,h3,nav,button,select,.tag{font-family:Arial,sans-serif}h1{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:18px 0}h2{font-size:23px}a{color:#126376}nav{display:flex;gap:22px;flex-wrap:wrap}section{background:white;border:1px solid #d8dcd8;border-radius:8px;padding:26px;margin:22px 0}.tag{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#3b7071}select{font-size:16px;padding:10px;max-width:100%;margin-bottom:16px}img{width:100%;height:auto}pre{white-space:pre-wrap;word-break:break-word;font:13px/1.5 monospace;background:#f3f6f5;padding:16px;max-height:500px;overflow:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}.notice{border-left:4px solid #bb8b42;padding-left:18px}li{margin:8px 0}footer{font-size:14px;color:#506167;margin:30px 0}summary{cursor:pointer;font-family:Arial,sans-serif;font-weight:600}button{cursor:pointer}</style></head><body><main><nav><a href="https://anjaney336.github.io/portfolio/#projects">Portfolio</a><a href="https://github.com/Anjaney336/integrated-real-assets-research">GitHub repository</a><a href="https://github.com/Anjaney336/integrated-real-assets-research/blob/main/README.md">Methodology</a></nav><p class="tag">Research dashboard · 24 October 2026 · 59 tests</p><h1>Real Assets: Fundamentals &amp; Relative Value</h1><p>Embassy public filings → dated NAV bridge → listed-property signals → tail risk</p><section><h2>Decision and evidence</h2><p>Brings the Embassy REIT/Manyata memo and Excel model into the listed-property research repository. A disclosure-availability gate keeps fundamental analysis separate from historical signals when the information was not yet public.</p><p><strong>Finding.</strong> Reported values reconcile to INR491.616 NAV per unit. The apparent 10.90% discount uses different dates and is not a tradable signal. The historical relative-value baseline remains negative after costs.</p></section><section><h2>Research views</h2><label for="view">Choose an analysis</label><br><select id="view"><option value="0">Relative-value risk overlay</option><option value="1">Historical annual diagnostics</option></select><figure data-view="0" ><img src="figure-0.svg" alt="Relative-value risk overlay"><figcaption>Relative-value risk overlay. Read the assumptions and units below.</figcaption></figure><figure data-view="1" hidden><img src="figure-1.svg" alt="Historical annual diagnostics"><figcaption>Historical annual diagnostics. Read the assumptions and units below.</figcaption></figure></section><div class="grid"><section><h2>Model mechanics</h2><p>NAV/unit = (GAV + other assets − other liabilities − gross debt) / units, with explicit crore-to-INR conversion. A decision date earlier than any required release date is rejected. Historical signal, expected-shortfall overlay and synthetic execution outputs remain separately identified.</p><p>From basic input reconciliation to stress analysis, each step has an auditable calculation trail in the repository.</p></section><section><h2>Boundaries</h2><p class="notice">The dated Embassy case is not a current valuation. It is not joined into old signals with hindsight. Historical short availability and execution remain assumptions; overlay scaling is not a full order-level rerun.</p><p>Offline research software, not a production trading or asset-management system.</p></section></div><section><h2>Data and reproducibility</h2><p>Embassy FY2026 valuation package: observation 31 March 2026, release 27 April. Q1 FY2027 supplemental databook: observation 30 June, release 30 July. Accessed 22 October 2026; complete URLs and pages in fundamentals.py and the memo.</p><ul><li><a href="data-0.csv" download>Signal and risk ledger (CSV)</a></li><li><a href="data-1.csv" download>Execution bridge (CSV)</a></li><li><a href="https://github.com/Anjaney336/integrated-real-assets-research/blob/main/embassy_case/Embassy_Investment_Memo.md">Read investment memo</a></li><li><a href="https://github.com/Anjaney336/integrated-real-assets-research/raw/refs/heads/main/embassy_case/Embassy_Manyata_Acquisition_Case.xlsx">Download Excel case</a></li></ul><details><summary>fundamentals.json — exact results and assumptions</summary><pre>{
+  &quot;as_of&quot;: &quot;2026-10-24&quot;,
+  &quot;march_nav_per_unit&quot;: 491.61628446364796,
+  &quot;june_price&quot;: 438.04,
+  &quot;cross_date_discount&quot;: 0.10897988157999994,
+  &quot;net_debt_rounding_residual_million&quot;: -1,
+  &quot;principal_minus_amortized_debt_million&quot;: 548,
+  &quot;sources&quot;: [
+    {
+      &quot;name&quot;: &quot;Embassy FY2026 earnings/valuation package&quot;,
+      &quot;url&quot;: &quot;https://www.embassyofficeparks.com/wp-content/uploads/2026/06/press_release__-_final.pdf&quot;,
+      &quot;observation_date&quot;: &quot;2026-03-31&quot;,
+      &quot;release_date&quot;: &quot;2026-04-27&quot;,
+      &quot;access_date&quot;: &quot;2026-10-22&quot;,
+      &quot;page&quot;: 38
+    },
+    {
+      &quot;name&quot;: &quot;Embassy Q1 FY2027 supplemental databook&quot;,
+      &quot;url&quot;: &quot;https://www.embassyofficeparks.com/wp-content/uploads/2026/09/se_filing_-__press_release_and_earnings_presentation.pdf&quot;,
+      &quot;observation_date&quot;: &quot;2026-06-30&quot;,
+      &quot;release_date&quot;: &quot;2026-07-30&quot;,
+      &quot;access_date&quot;: &quot;2026-10-22&quot;,
+      &quot;pages&quot;: [
+        55,
+        67,
+        68
+      ]
+    }
+  ],
+  &quot;warning&quot;: &quot;March NAV and June price are not contemporaneous. July disclosure cannot be used for a June backtest. This snapshot does not create a tradable convergence signal.&quot;
+}</pre></details><details><summary>summary.json — exact results and assumptions</summary><pre>{
+  &quot;observations&quot;: 1675,
+  &quot;baseline&quot;: {
+    &quot;total_return&quot;: -0.0462783412058656,
+    &quot;max_drawdown&quot;: -0.10708501710291518,
+    &quot;annualized_vol&quot;: 0.04528304210989733
+  },
+  &quot;risk_overlay_cost_scenarios&quot;: {
+    &quot;0&quot;: {
+      &quot;total_return&quot;: -0.03267330131800383,
+      &quot;max_drawdown&quot;: -0.09434074332278919,
+      &quot;annualized_vol&quot;: 0.03818356751918184
+    },
+    &quot;5&quot;: {
+      &quot;total_return&quot;: -0.03377501556986995,
+      &quot;max_drawdown&quot;: -0.09535620409873613,
+      &quot;annualized_vol&quot;: 0.038185044893653014
+    },
+    &quot;10&quot;: {
+      &quot;total_return&quot;: -0.03487554164811513,
+      &quot;max_drawdown&quot;: -0.09637058842828694,
+      &quot;annualized_vol&quot;: 0.03818679066914888
+    },
+    &quot;25&quot;: {
+      &quot;total_return&quot;: -0.038170002968583194,
+      &quot;max_drawdown&quot;: -0.09940729352011113,
+      &quot;annualized_vol&quot;: 0.03819363800544578
+    }
+  },
+  &quot;scaled_days&quot;: 748,
+  &quot;execution_stress_runs&quot;: 200,
+  &quot;sources&quot;: [
+    {
+      &quot;name&quot;: &quot;Published listed-property strategy ledger; Yahoo-based upstream prices&quot;,
+      &quot;link&quot;: &quot;https://github.com/Anjaney336/india-realestate-quant-backtest/blob/main/results/historical/ledger.csv&quot;,
+      &quot;access_date&quot;: &quot;2026-10-24&quot;,
+      &quot;sha256&quot;: &quot;c9791ab4bb2db038f3f7180ac63df58206e7bbb48f0983b251338dc715bff9ba&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Synthetic execution snapshots&quot;,
+      &quot;link&quot;: &quot;https://github.com/Anjaney336/quant-execution-lab/blob/main/experiments.py&quot;,
+      &quot;access_date&quot;: &quot;2026-10-24&quot;
+    }
+  ],
+  &quot;assumptions&quot;: {
+    &quot;ES_window&quot;: 252,
+    &quot;tail_fraction&quot;: 0.05,
+    &quot;daily_tail_budget&quot;: 0.005,
+    &quot;warmup_scale&quot;: 1.0,
+    &quot;extra_cost_bps&quot;: [
+      0,
+      5,
+      10,
+      25
+    ]
+  },
+  &quot;limitations&quot;: &quot;Counterfactual return-scaling overlay, not an order-level rerun. Baseline already includes costs; extra costs apply to scale changes. Execution snapshots are synthetic and not calibrated to Indian property stocks. No claim of profitable alpha.&quot;
+}</pre></details></section><footer>Prepared by Anjaney Malhotra with AI coding assistance. Calculations, assumptions and limitations are available for review. No employer sponsorship or live investment track record is implied.</footer></main><script>document.getElementById('view').addEventListener('change',e=>{document.querySelectorAll('[data-view]').forEach(x=>x.hidden=x.dataset.view!==e.target.value)});</script></body></html>

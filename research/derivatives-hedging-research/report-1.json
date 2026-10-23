@@ -1,0 +1,40 @@
+{
+  "results": {
+    "diffusion_delta": {
+      "runs": 150,
+      "rmse": 0.6146301716512272,
+      "mean_pnl": -0.2580104645031913,
+      "mean_fees": 0.1755071874127809
+    },
+    "diffusion_delta_gamma": {
+      "runs": 150,
+      "rmse": 0.2485548444114554,
+      "mean_pnl": -0.1997401055584888,
+      "mean_fees": 0.19783908645233558
+    },
+    "jump_delta": {
+      "runs": 150,
+      "rmse": 2.4967802320726444,
+      "mean_pnl": 1.5180436598232727,
+      "mean_fees": 0.1753997637759431
+    },
+    "jump_delta_gamma": {
+      "runs": 150,
+      "rmse": 0.5399311494284604,
+      "mean_pnl": -0.2586365477998516,
+      "mean_fees": 0.2142380688218023
+    }
+  },
+  "assumptions": {
+    "pricing_vol": 0.25,
+    "rate": 0.02,
+    "hedge_option_extra_days": 21,
+    "stock_cost_bps": 5,
+    "option_cost_bps": 20,
+    "max_hedge_options": 5
+  },
+  "source": "Synthetic price paths, hedging.py; model-priced calls",
+  "source_url": "https://github.com/Anjaney336/derivatives-hedging-research/blob/main/hedging.py",
+  "access_date": "2026-10-24",
+  "limits": "Same-close theoretical fills, no option chain, margin, borrow fees, dividends or liquidity constraint. Gamma capped near unstable denominators; residual risk reported."
+}

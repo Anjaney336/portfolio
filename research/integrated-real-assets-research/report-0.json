@@ -1,0 +1,31 @@
+{
+  "as_of": "2026-10-24",
+  "march_nav_per_unit": 491.61628446364796,
+  "june_price": 438.04,
+  "cross_date_discount": 0.10897988157999994,
+  "net_debt_rounding_residual_million": -1,
+  "principal_minus_amortized_debt_million": 548,
+  "sources": [
+    {
+      "name": "Embassy FY2026 earnings/valuation package",
+      "url": "https://www.embassyofficeparks.com/wp-content/uploads/2026/06/press_release__-_final.pdf",
+      "observation_date": "2026-03-31",
+      "release_date": "2026-04-27",
+      "access_date": "2026-10-22",
+      "page": 38
+    },
+    {
+      "name": "Embassy Q1 FY2027 supplemental databook",
+      "url": "https://www.embassyofficeparks.com/wp-content/uploads/2026/09/se_filing_-__press_release_and_earnings_presentation.pdf",
+      "observation_date": "2026-06-30",
+      "release_date": "2026-07-30",
+      "access_date": "2026-10-22",
+      "pages": [
+        55,
+        67,
+        68
+      ]
+    }
+  ],
+  "warning": "March NAV and June price are not contemporaneous. July disclosure cannot be used for a June backtest. This snapshot does not create a tradable convergence signal."
+}

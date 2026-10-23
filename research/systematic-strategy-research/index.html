@@ -1,0 +1,240 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Systematic Strategies &amp; Execution | Anjaney Malhotra</title><style>body{margin:0;background:#f4f3ed;color:#182c34;font:17px/1.6 Georgia,serif}main{max-width:1100px;margin:auto;padding:32px 24px}h1,h2,h3,nav,button,select,.tag{font-family:Arial,sans-serif}h1{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:18px 0}h2{font-size:23px}a{color:#126376}nav{display:flex;gap:22px;flex-wrap:wrap}section{background:white;border:1px solid #d8dcd8;border-radius:8px;padding:26px;margin:22px 0}.tag{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#3b7071}select{font-size:16px;padding:10px;max-width:100%;margin-bottom:16px}img{width:100%;height:auto}pre{white-space:pre-wrap;word-break:break-word;font:13px/1.5 monospace;background:#f3f6f5;padding:16px;max-height:500px;overflow:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}.notice{border-left:4px solid #bb8b42;padding-left:18px}li{margin:8px 0}footer{font-size:14px;color:#506167;margin:30px 0}summary{cursor:pointer;font-family:Arial,sans-serif;font-weight:600}button{cursor:pointer}</style></head><body><main><nav><a href="https://anjaney336.github.io/portfolio/#projects">Portfolio</a><a href="https://github.com/Anjaney336/systematic-strategy-research">GitHub repository</a><a href="https://github.com/Anjaney336/systematic-strategy-research/blob/main/README.md">Methodology</a></nav><p class="tag">Research dashboard · 24 October 2026 · 40 tests</p><h1>Systematic Strategies &amp; Execution</h1><p>Causal selection → target weights → integer orders → FIFO fills → cash reconciliation</p><section><h2>Decision and evidence</h2><p>Combines systematic strategy research with the execution lab. Portfolio targets now become cash-constrained integer orders; IOC fills respect assumed depth, and every trading step reconciles fees, slippage, holdings and cash.</p><p><strong>Finding.</strong> On the same historical price path, depth assumptions materially change fills and exposure. The 100-unit scenario fills about 49.98% of requested units and returns 13.20% cumulatively after terminal costs. This is a hypothetical execution replay, not observed fill performance.</p></section><section><h2>Research views</h2><label for="view">Choose an analysis</label><br><select id="view"><option value="0">Orders and fills: historical price replay</option><option value="1">Strategy versus benchmark</option><option value="2">Paired execution robustness</option></select><figure data-view="0" ><img src="figure-0.svg" alt="Orders and fills: historical price replay"><figcaption>Orders and fills: historical price replay. Read the assumptions and units below.</figcaption></figure><figure data-view="1" hidden><img src="figure-1.svg" alt="Strategy versus benchmark"><figcaption>Strategy versus benchmark. Read the assumptions and units below.</figcaption></figure><figure data-view="2" hidden><img src="figure-2.svg" alt="Paired execution robustness"><figcaption>Paired execution robustness. Read the assumptions and units below.</figcaption></figure></section><div class="grid"><section><h2>Model mechanics</h2><p>Signals and selection exclude the execution-day close. Orders target floor(weight × pre-trade equity / price). Sells release cash before buys; buys cannot borrow. Wealth after fills = wealth before fills − fees − execution slippage. A separately labelled terminal auction closes positions.</p><p>From basic input reconciliation to stress analysis, each step has an auditable calculation trail in the repository.</p></section><section><h2>Boundaries</h2><p class="notice">Depth, spreads and terminal auction capacity are invented scenarios. Better returns under lower liquidity can reflect delayed exposure, not better execution. No calibrated market impact, tax, latency or capacity claims.</p><p>Offline research software, not a production trading or asset-management system.</p></section></div><section><h2>Data and reproducibility</h2><p>Yahoo Finance adjusted-price cache for DLF, Godrej Properties, Prestige and Oberoi; accessed 24 October 2026. Exact input hash and URLs in result JSON. Depth/spread scenarios are synthetic.</p><ul><li><a href="data-0.csv" download>100-unit order journal (CSV)</a></li><li><a href="data-1.csv" download>100-unit cash ledger (CSV)</a></li><li><a href="data-2.csv" download>Chronological rule selection (CSV)</a></li></ul><details><summary>summary.json — exact results and assumptions</summary><pre>{
+  &quot;source&quot;: {
+    &quot;name&quot;: &quot;Yahoo Finance adjusted-close cache; hypothetical execution&quot;,
+    &quot;urls&quot;: [
+      &quot;https://finance.yahoo.com/quote/DLF.NS/history/&quot;,
+      &quot;https://finance.yahoo.com/quote/GODREJPROP.NS/history/&quot;,
+      &quot;https://finance.yahoo.com/quote/PRESTIGE.NS/history/&quot;,
+      &quot;https://finance.yahoo.com/quote/OBEROIRLTY.NS/history/&quot;
+    ],
+    &quot;access_date&quot;: &quot;2026-10-24&quot;,
+    &quot;sha256&quot;: &quot;1298ee925e4e8547aec0745f4dbe4f1b961918f1ff47f81d691f28cf18e64ea4&quot;
+  },
+  &quot;scenarios&quot;: [
+    {
+      &quot;depth_units&quot;: 25,
+      &quot;return_after_terminal_cost&quot;: 0.25799216230487443,
+      &quot;filled_units&quot;: 46395,
+      &quot;requested_units&quot;: 264912,
+      &quot;unit_fill_ratio&quot;: 0.17513362928066678,
+      &quot;terminal_cost&quot;: 795.2604292296546
+    },
+    {
+      &quot;depth_units&quot;: 100,
+      &quot;return_after_terminal_cost&quot;: 0.13203760664194308,
+      &quot;filled_units&quot;: 83481,
+      &quot;requested_units&quot;: 167045,
+      &quot;unit_fill_ratio&quot;: 0.4997515639498339,
+      &quot;terminal_cost&quot;: 714.55613919035
+    },
+    {
+      &quot;depth_units&quot;: 1000,
+      &quot;return_after_terminal_cost&quot;: 0.06785997382898068,
+      &quot;filled_units&quot;: 127524,
+      &quot;requested_units&quot;: 128324,
+      &quot;unit_fill_ratio&quot;: 0.9937657803684424,
+      &quot;terminal_cost&quot;: 674.2894656706976
+    }
+  ],
+  &quot;folds&quot;: 12,
+  &quot;assumptions&quot;: {
+    &quot;fee_bps&quot;: 10,
+    &quot;half_spread_bps&quot;: 5,
+    &quot;depth_units&quot;: [
+      25,
+      100,
+      1000
+    ],
+    &quot;capital&quot;: 1000000
+  },
+  &quot;limits&quot;: &quot;Synthetic displayed depth, adjusted-close marks, tick rounding and terminal auction capacity. No market impact, latency, empirically observed order book, taxes or trading-size feasibility. Curves are pre-liquidation; reported returns include final liquidation.&quot;
+}</pre></details><details><summary>summary.json — exact results and assumptions</summary><pre>{
+  &quot;dataset&quot;: &quot;historical&quot;,
+  &quot;source&quot;: {
+    &quot;name&quot;: &quot;Yahoo Finance vendor-adjusted closes; fixed survivor universe&quot;,
+    &quot;links&quot;: [
+      &quot;https://finance.yahoo.com/quote/DLF.NS/history/&quot;,
+      &quot;https://finance.yahoo.com/quote/GODREJPROP.NS/history/&quot;,
+      &quot;https://finance.yahoo.com/quote/PRESTIGE.NS/history/&quot;,
+      &quot;https://finance.yahoo.com/quote/OBEROIRLTY.NS/history/&quot;
+    ],
+    &quot;access_date&quot;: &quot;2026-10-24&quot;,
+    &quot;sha256&quot;: &quot;1298ee925e4e8547aec0745f4dbe4f1b961918f1ff47f81d691f28cf18e64ea4&quot;
+  },
+  &quot;symbols&quot;: [
+    &quot;DLF.NS&quot;,
+    &quot;GODREJPROP.NS&quot;,
+    &quot;PRESTIGE.NS&quot;,
+    &quot;OBEROIRLTY.NS&quot;
+  ],
+  &quot;start&quot;: &quot;2021-01-18&quot;,
+  &quot;end&quot;: &quot;2026-10-19&quot;,
+  &quot;strategy&quot;: {
+    &quot;observations&quot;: 1422,
+    &quot;total_return&quot;: 0.11533137409160621,
+    &quot;cagr&quot;: 0.019531607957871566,
+    &quot;sharpe_zero_rf&quot;: 0.23502658139134597,
+    &quot;max_drawdown&quot;: -0.3178188979959282
+  },
+  &quot;benchmark&quot;: {
+    &quot;observations&quot;: 1422,
+    &quot;total_return&quot;: 1.9724102191487578,
+    &quot;cagr&quot;: 0.21294764662676835,
+    &quot;sharpe_zero_rf&quot;: 0.7816790452848088,
+    &quot;max_drawdown&quot;: -0.41505949939314424
+  },
+  &quot;paired_block_bootstrap&quot;: {
+    &quot;annualized_mean_difference&quot;: -0.2153804137451321,
+    &quot;lower_95&quot;: -0.402959081784142,
+    &quot;upper_95&quot;: -0.03141984527869797,
+    &quot;block_length&quot;: 20,
+    &quot;resamples&quot;: 1000,
+    &quot;conditional_on_selected_path&quot;: true
+  },
+  &quot;folds&quot;: [
+    {
+      &quot;start&quot;: 505,
+      &quot;stop&quot;: 631,
+      &quot;mode&quot;: &quot;trend&quot;,
+      &quot;lookback&quot;: 21,
+      &quot;training_sharpe&quot;: 1.1697588762991364
+    },
+    {
+      &quot;start&quot;: 631,
+      &quot;stop&quot;: 757,
+      &quot;mode&quot;: &quot;reversion&quot;,
+      &quot;lookback&quot;: 21,
+      &quot;training_sharpe&quot;: 0.9201259583022782
+    },
+    {
+      &quot;start&quot;: 757,
+      &quot;stop&quot;: 883,
+      &quot;mode&quot;: &quot;trend&quot;,
+      &quot;lookback&quot;: 126,
+      &quot;training_sharpe&quot;: 1.0982964729462206
+    },
+    {
+      &quot;start&quot;: 883,
+      &quot;stop&quot;: 1009,
+      &quot;mode&quot;: &quot;reversion&quot;,
+      &quot;lookback&quot;: 63,
+      &quot;training_sharpe&quot;: 1.417626332134221
+    },
+    {
+      &quot;start&quot;: 1009,
+      &quot;stop&quot;: 1135,
+      &quot;mode&quot;: &quot;reversion&quot;,
+      &quot;lookback&quot;: 63,
+      &quot;training_sharpe&quot;: 0.5128631473708638
+    },
+    {
+      &quot;start&quot;: 1135,
+      &quot;stop&quot;: 1261,
+      &quot;mode&quot;: &quot;momentum&quot;,
+      &quot;lookback&quot;: 126,
+      &quot;training_sharpe&quot;: 0.8178146968067884
+    },
+    {
+      &quot;start&quot;: 1261,
+      &quot;stop&quot;: 1387,
+      &quot;mode&quot;: &quot;momentum&quot;,
+      &quot;lookback&quot;: 126,
+      &quot;training_sharpe&quot;: 1.2679513452615854
+    },
+    {
+      &quot;start&quot;: 1387,
+      &quot;stop&quot;: 1513,
+      &quot;mode&quot;: &quot;momentum&quot;,
+      &quot;lookback&quot;: 126,
+      &quot;training_sharpe&quot;: 1.8361313302616509
+    },
+    {
+      &quot;start&quot;: 1513,
+      &quot;stop&quot;: 1639,
+      &quot;mode&quot;: &quot;trend&quot;,
+      &quot;lookback&quot;: 126,
+      &quot;training_sharpe&quot;: 1.6472721322716095
+    },
+    {
+      &quot;start&quot;: 1639,
+      &quot;stop&quot;: 1765,
+      &quot;mode&quot;: &quot;trend&quot;,
+      &quot;lookback&quot;: 126,
+      &quot;training_sharpe&quot;: 1.2594601065973385
+    },
+    {
+      &quot;start&quot;: 1765,
+      &quot;stop&quot;: 1891,
+      &quot;mode&quot;: &quot;reversion&quot;,
+      &quot;lookback&quot;: 126,
+      &quot;training_sharpe&quot;: 0.21785527732484275
+    },
+    {
+      &quot;start&quot;: 1891,
+      &quot;stop&quot;: 1927,
+      &quot;mode&quot;: &quot;reversion&quot;,
+      &quot;lookback&quot;: 126,
+      &quot;training_sharpe&quot;: -0.11360082105019527
+    }
+  ],
+  &quot;cost_sensitivity&quot;: [
+    {
+      &quot;cost_bps&quot;: 0,
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: 0.21724415264986452,
+      &quot;cagr&quot;: 0.03545260436494124,
+      &quot;sharpe_zero_rf&quot;: 0.38078871724596663,
+      &quot;max_drawdown&quot;: -0.30004651861455656
+    },
+    {
+      &quot;cost_bps&quot;: 5,
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: 0.16517841534940003,
+      &quot;cagr&quot;: 0.02746194909590871,
+      &quot;sharpe_zero_rf&quot;: 0.3079207800232706,
+      &quot;max_drawdown&quot;: -0.30898902495518266
+    },
+    {
+      &quot;cost_bps&quot;: 10,
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: 0.11533137409160621,
+      &quot;cagr&quot;: 0.019531607957871566,
+      &quot;sharpe_zero_rf&quot;: 0.23502658139134597,
+      &quot;max_drawdown&quot;: -0.3178188979959282
+    },
+    {
+      &quot;cost_bps&quot;: 25,
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: -0.02181973664881487,
+      &quot;cagr&quot;: -0.0039019662796100363,
+      &quot;sharpe_zero_rf&quot;: 0.016396445735330847,
+      &quot;max_drawdown&quot;: -0.3436466157657452
+    },
+    {
+      &quot;cost_bps&quot;: 50,
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: -0.21407913923101296,
+      &quot;cagr&quot;: -0.0417925633593168,
+      &quot;sharpe_zero_rf&quot;: -0.3465608418861897,
+      &quot;max_drawdown&quot;: -0.3845673472996862
+    }
+  ],
+  &quot;assumptions&quot;: {
+    &quot;train_observations&quot;: 504,
+    &quot;test_observations&quot;: 126,
+    &quot;candidate_rules&quot;: 9,
+    &quot;vol_target&quot;: 0.12,
+    &quot;cost_bps_per_turnover&quot;: 10,
+    &quot;cash_rate&quot;: 0,
+    &quot;long_only&quot;: true,
+    &quot;max_gross&quot;: 1,
+    &quot;signal_lag&quot;: &quot;t-2 information, close t-1 execution, t return&quot;
+  },
+  &quot;limitations&quot;: [
+    &quot;Retrospective pseudo-OOS, not an unseen live experiment&quot;,
+    &quot;Fixed present-day survivor universe; selection bias&quot;,
+    &quot;Adjusted close execution proxy, no actual fill, impact, taxes or capacity&quot;,
+    &quot;Conditional bootstrap does not correct research-selection bias&quot;,
+    &quot;No guarantee of positive performance&quot;
+  ]
+}</pre></details></section><footer>Prepared by Anjaney Malhotra with AI coding assistance. Calculations, assumptions and limitations are available for review. No employer sponsorship or live investment track record is implied.</footer></main><script>document.getElementById('view').addEventListener('change',e=>{document.querySelectorAll('[data-view]').forEach(x=>x.hidden=x.dataset.view!==e.target.value)});</script></body></html>

@@ -1,0 +1,51 @@
+{
+  "source": {
+    "name": "Yahoo Finance adjusted-close cache; hypothetical execution",
+    "urls": [
+      "https://finance.yahoo.com/quote/DLF.NS/history/",
+      "https://finance.yahoo.com/quote/GODREJPROP.NS/history/",
+      "https://finance.yahoo.com/quote/PRESTIGE.NS/history/",
+      "https://finance.yahoo.com/quote/OBEROIRLTY.NS/history/"
+    ],
+    "access_date": "2026-10-24",
+    "sha256": "1298ee925e4e8547aec0745f4dbe4f1b961918f1ff47f81d691f28cf18e64ea4"
+  },
+  "scenarios": [
+    {
+      "depth_units": 25,
+      "return_after_terminal_cost": 0.25799216230487443,
+      "filled_units": 46395,
+      "requested_units": 264912,
+      "unit_fill_ratio": 0.17513362928066678,
+      "terminal_cost": 795.2604292296546
+    },
+    {
+      "depth_units": 100,
+      "return_after_terminal_cost": 0.13203760664194308,
+      "filled_units": 83481,
+      "requested_units": 167045,
+      "unit_fill_ratio": 0.4997515639498339,
+      "terminal_cost": 714.55613919035
+    },
+    {
+      "depth_units": 1000,
+      "return_after_terminal_cost": 0.06785997382898068,
+      "filled_units": 127524,
+      "requested_units": 128324,
+      "unit_fill_ratio": 0.9937657803684424,
+      "terminal_cost": 674.2894656706976
+    }
+  ],
+  "folds": 12,
+  "assumptions": {
+    "fee_bps": 10,
+    "half_spread_bps": 5,
+    "depth_units": [
+      25,
+      100,
+      1000
+    ],
+    "capital": 1000000
+  },
+  "limits": "Synthetic displayed depth, adjusted-close marks, tick rounding and terminal auction capacity. No market impact, latency, empirically observed order book, taxes or trading-size feasibility. Curves are pre-liquidation; reported returns include final liquidation."
+}

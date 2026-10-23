@@ -1,0 +1,26 @@
+{
+  "case": "Synthetic Bengaluru office; not an actual deal",
+  "base_equity_npv_crore": -10.999516102218383,
+  "base_minimum_dscr": 1.0441310167031683,
+  "debt_capacity": {
+    "limits": {
+      "DSCR": 459417647.349394,
+      "LTV": 550000000.0,
+      "Debt yield": 791595000.0
+    },
+    "capacity": 459417647.349394,
+    "binding": "DSCR"
+  },
+  "maximum_price_crore": 83.53048133625346,
+  "npv_change_crore_per_1pct_relative_input_change": {
+    "rent_psf_month": 1.086341258840938,
+    "occupancy": 1.0721389082203918,
+    "exit_cap_rate": -0.6156898520335078,
+    "interest_rate": -0.1509459475914359
+  },
+  "scenarios": 20,
+  "assumed_debt_yield_floor": 0.09,
+  "source": "model.py and assumptions.json",
+  "source_url": "https://github.com/Anjaney336/bengaluru-real-estate-investment-lab/blob/main/model.py",
+  "access_date": "2026-10-24"
+}

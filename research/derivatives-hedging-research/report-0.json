@@ -1,0 +1,53 @@
+{
+  "source": {
+    "name": "Yahoo Finance adjusted DLF closes",
+    "url": "https://finance.yahoo.com/quote/DLF.NS/history/",
+    "access_date": "2026-10-24",
+    "sha256": "1298ee925e4e8547aec0745f4dbe4f1b961918f1ff47f81d691f28cf18e64ea4"
+  },
+  "results": {
+    "rolling_nine_rule_selection": {
+      "observations": 1422,
+      "total_return": 0.05785017679097937,
+      "cagr": 0.010016183814556712,
+      "sharpe_zero_rf": 0.15890577248278936,
+      "max_drawdown": -0.23426376894429912
+    },
+    "fan_slope_0.5": {
+      "observations": 1422,
+      "total_return": -0.07730805750541025,
+      "cagr": -0.01415753488142324,
+      "sharpe_zero_rf": -0.06151812844686235,
+      "max_drawdown": -0.2611955964242104
+    },
+    "fan_slope_1": {
+      "observations": 1422,
+      "total_return": 0.08719516133880933,
+      "cagr": 0.014925682607003665,
+      "sharpe_zero_rf": 0.28211294541541565,
+      "max_drawdown": -0.058509839285537435
+    },
+    "fan_slope_2": {
+      "observations": 1422,
+      "total_return": -0.0039023143829248763,
+      "cagr": -0.0006926622251820502,
+      "sharpe_zero_rf": -0.06155170061848798,
+      "max_drawdown": -0.02222691997390258
+    },
+    "buy_hold": {
+      "observations": 1422,
+      "total_return": 1.5202410337248526,
+      "cagr": 0.1779900824808851,
+      "sharpe_zero_rf": 0.648868581832222,
+      "max_drawdown": -0.4614403518082776
+    }
+  },
+  "cost_bps": 10,
+  "assumptions": "Fan anchored at trailing 63-observation low through t-2; slope in trailing standard-deviation-of-price-change units per bar. Equal allocation to positive signals, no shorts. Slopes .5/1/2 reported without selecting a winner.",
+  "reference": {
+    "name": "TradingView Gann fan definition",
+    "url": "https://www.tradingview.com/support/solutions/43000518151-gann-fan-drawing-tool/",
+    "access_date": "2026-10-24"
+  },
+  "limitations": "Our normalized fan is an explicit experimental variant, not a uniquely canonical Gann implementation. Same historical sample previously inspected. Equity benchmark P&L is distinct from model-priced option hedge results. No empirical options alpha inferred."
+}

@@ -1,0 +1,92 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Derivatives &amp; Systematic Risk Research | Anjaney Malhotra</title><style>body{margin:0;background:#f4f3ed;color:#182c34;font:17px/1.6 Georgia,serif}main{max-width:1100px;margin:auto;padding:32px 24px}h1,h2,h3,nav,button,select,.tag{font-family:Arial,sans-serif}h1{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:18px 0}h2{font-size:23px}a{color:#126376}nav{display:flex;gap:22px;flex-wrap:wrap}section{background:white;border:1px solid #d8dcd8;border-radius:8px;padding:26px;margin:22px 0}.tag{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#3b7071}select{font-size:16px;padding:10px;max-width:100%;margin-bottom:16px}img{width:100%;height:auto}pre{white-space:pre-wrap;word-break:break-word;font:13px/1.5 monospace;background:#f3f6f5;padding:16px;max-height:500px;overflow:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}.notice{border-left:4px solid #bb8b42;padding-left:18px}li{margin:8px 0}footer{font-size:14px;color:#506167;margin:30px 0}summary{cursor:pointer;font-family:Arial,sans-serif;font-weight:600}button{cursor:pointer}</style></head><body><main><nav><a href="https://anjaney336.github.io/portfolio/#projects">Portfolio</a><a href="https://github.com/Anjaney336/derivatives-hedging-research">GitHub repository</a><a href="https://github.com/Anjaney336/derivatives-hedging-research/blob/main/README.md">Methodology</a></nav><p class="tag">Research dashboard · 24 October 2026 · 32 tests</p><h1>Derivatives &amp; Systematic Risk Research</h1><p>Greeks → delta/gamma hedging → revaluation stress → chronological rule experiments</p><section><h2>Decision and evidence</h2><p>Combines the derivatives hedging engine with the causal strategy research kernel. Option-risk experiments and underlying-direction experiments share accounting conventions but keep their P&amp;L and assumptions separate.</p><p><strong>Finding.</strong> The specified Gann-inspired fan variants all underperform DLF buy-and-hold in this retrospective test. Delta/gamma hedging reduces simulated hedge error under its pricing assumptions. Neither result establishes an executable options edge.</p></section><section><h2>Research views</h2><label for="view">Choose an analysis</label><br><select id="view"><option value="0">Delta/gamma hedge distributions</option><option value="1">Exact revaluation and Greek residuals</option><option value="2">Underlying strategy comparison</option></select><figure data-view="0" ><img src="figure-0.svg" alt="Delta/gamma hedge distributions"><figcaption>Delta/gamma hedge distributions. Read the assumptions and units below.</figcaption></figure><figure data-view="1" hidden><img src="figure-1.svg" alt="Exact revaluation and Greek residuals"><figcaption>Exact revaluation and Greek residuals. Read the assumptions and units below.</figcaption></figure><figure data-view="2" hidden><img src="figure-2.svg" alt="Underlying strategy comparison"><figcaption>Underlying strategy comparison. Read the assumptions and units below.</figcaption></figure></section><div class="grid"><section><h2>Model mechanics</h2><p>Gamma hedge = −target gamma / hedge-option gamma, subject to position limits; stock offsets remaining delta. Exact spot/volatility repricing is compared with delta + half gamma + vega approximation. The fan line uses a trailing low and explicitly scaled price-change standard deviations per bar, observed through t−2.</p><p>From basic input reconciliation to stress analysis, each step has an auditable calculation trail in the repository.</p></section><section><h2>Boundaries</h2><p class="notice">Gann fan settings are one explicit experimental definition, not a canonical or validated predictive rule. Options are model-priced, with assumed liquidity and no real chain. Taylor residuals include cross and higher-order risk.</p><p>Offline research software, not a production trading or asset-management system.</p></section></div><section><h2>Data and reproducibility</h2><p>Seeded synthetic option paths plus vendor-adjusted DLF closes accessed 24 October 2026. Gann drawing reference: TradingView support; this normalized rule is our documented variant. Sources and hashes in result JSON.</p><ul><li><a href="data-0.csv" download>Option revaluation stress (CSV)</a></li><li><a href="data-1.csv" download>Historical strategy returns (CSV)</a></li><li><a href="data-2.csv" download>Hedge trials (CSV)</a></li><li><a href="https://www.tradingview.com/support/solutions/43000518151-gann-fan-drawing-tool/">Gann fan reference</a></li></ul><details><summary>summary.json — exact results and assumptions</summary><pre>{
+  &quot;source&quot;: {
+    &quot;name&quot;: &quot;Yahoo Finance adjusted DLF closes&quot;,
+    &quot;url&quot;: &quot;https://finance.yahoo.com/quote/DLF.NS/history/&quot;,
+    &quot;access_date&quot;: &quot;2026-10-24&quot;,
+    &quot;sha256&quot;: &quot;1298ee925e4e8547aec0745f4dbe4f1b961918f1ff47f81d691f28cf18e64ea4&quot;
+  },
+  &quot;results&quot;: {
+    &quot;rolling_nine_rule_selection&quot;: {
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: 0.05785017679097937,
+      &quot;cagr&quot;: 0.010016183814556712,
+      &quot;sharpe_zero_rf&quot;: 0.15890577248278936,
+      &quot;max_drawdown&quot;: -0.23426376894429912
+    },
+    &quot;fan_slope_0.5&quot;: {
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: -0.07730805750541025,
+      &quot;cagr&quot;: -0.01415753488142324,
+      &quot;sharpe_zero_rf&quot;: -0.06151812844686235,
+      &quot;max_drawdown&quot;: -0.2611955964242104
+    },
+    &quot;fan_slope_1&quot;: {
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: 0.08719516133880933,
+      &quot;cagr&quot;: 0.014925682607003665,
+      &quot;sharpe_zero_rf&quot;: 0.28211294541541565,
+      &quot;max_drawdown&quot;: -0.058509839285537435
+    },
+    &quot;fan_slope_2&quot;: {
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: -0.0039023143829248763,
+      &quot;cagr&quot;: -0.0006926622251820502,
+      &quot;sharpe_zero_rf&quot;: -0.06155170061848798,
+      &quot;max_drawdown&quot;: -0.02222691997390258
+    },
+    &quot;buy_hold&quot;: {
+      &quot;observations&quot;: 1422,
+      &quot;total_return&quot;: 1.5202410337248526,
+      &quot;cagr&quot;: 0.1779900824808851,
+      &quot;sharpe_zero_rf&quot;: 0.648868581832222,
+      &quot;max_drawdown&quot;: -0.4614403518082776
+    }
+  },
+  &quot;cost_bps&quot;: 10,
+  &quot;assumptions&quot;: &quot;Fan anchored at trailing 63-observation low through t-2; slope in trailing standard-deviation-of-price-change units per bar. Equal allocation to positive signals, no shorts. Slopes .5/1/2 reported without selecting a winner.&quot;,
+  &quot;reference&quot;: {
+    &quot;name&quot;: &quot;TradingView Gann fan definition&quot;,
+    &quot;url&quot;: &quot;https://www.tradingview.com/support/solutions/43000518151-gann-fan-drawing-tool/&quot;,
+    &quot;access_date&quot;: &quot;2026-10-24&quot;
+  },
+  &quot;limitations&quot;: &quot;Our normalized fan is an explicit experimental variant, not a uniquely canonical Gann implementation. Same historical sample previously inspected. Equity benchmark P&amp;L is distinct from model-priced option hedge results. No empirical options alpha inferred.&quot;
+}</pre></details><details><summary>gamma_summary.json — exact results and assumptions</summary><pre>{
+  &quot;results&quot;: {
+    &quot;diffusion_delta&quot;: {
+      &quot;runs&quot;: 150,
+      &quot;rmse&quot;: 0.6146301716512272,
+      &quot;mean_pnl&quot;: -0.2580104645031913,
+      &quot;mean_fees&quot;: 0.1755071874127809
+    },
+    &quot;diffusion_delta_gamma&quot;: {
+      &quot;runs&quot;: 150,
+      &quot;rmse&quot;: 0.2485548444114554,
+      &quot;mean_pnl&quot;: -0.1997401055584888,
+      &quot;mean_fees&quot;: 0.19783908645233558
+    },
+    &quot;jump_delta&quot;: {
+      &quot;runs&quot;: 150,
+      &quot;rmse&quot;: 2.4967802320726444,
+      &quot;mean_pnl&quot;: 1.5180436598232727,
+      &quot;mean_fees&quot;: 0.1753997637759431
+    },
+    &quot;jump_delta_gamma&quot;: {
+      &quot;runs&quot;: 150,
+      &quot;rmse&quot;: 0.5399311494284604,
+      &quot;mean_pnl&quot;: -0.2586365477998516,
+      &quot;mean_fees&quot;: 0.2142380688218023
+    }
+  },
+  &quot;assumptions&quot;: {
+    &quot;pricing_vol&quot;: 0.25,
+    &quot;rate&quot;: 0.02,
+    &quot;hedge_option_extra_days&quot;: 21,
+    &quot;stock_cost_bps&quot;: 5,
+    &quot;option_cost_bps&quot;: 20,
+    &quot;max_hedge_options&quot;: 5
+  },
+  &quot;source&quot;: &quot;Synthetic price paths, hedging.py; model-priced calls&quot;,
+  &quot;source_url&quot;: &quot;https://github.com/Anjaney336/derivatives-hedging-research/blob/main/hedging.py&quot;,
+  &quot;access_date&quot;: &quot;2026-10-24&quot;,
+  &quot;limits&quot;: &quot;Same-close theoretical fills, no option chain, margin, borrow fees, dividends or liquidity constraint. Gamma capped near unstable denominators; residual risk reported.&quot;
+}</pre></details></section><footer>Prepared by Anjaney Malhotra with AI coding assistance. Calculations, assumptions and limitations are available for review. No employer sponsorship or live investment track record is implied.</footer></main><script>document.getElementById('view').addEventListener('change',e=>{document.querySelectorAll('[data-view]').forEach(x=>x.hidden=x.dataset.view!==e.target.value)});</script></body></html>

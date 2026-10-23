@@ -1,0 +1,51 @@
+{
+  "source": "Synthetic lease cohorts specified in lease_engine.py",
+  "source_url": "https://github.com/Anjaney336/bengaluru-real-estate-investment-lab/blob/main/lease_engine.py",
+  "access_date": "2026-10-24",
+  "assumptions": [
+    {
+      "name": "A",
+      "area": 40000,
+      "rent": 92,
+      "expiry": 12,
+      "renewal_probability": 0.75,
+      "downtime": 6,
+      "renewal_rent": 98,
+      "ti_psf": 500,
+      "escalation": 0.05
+    },
+    {
+      "name": "B",
+      "area": 30000,
+      "rent": 88,
+      "expiry": 24,
+      "renewal_probability": 0.6,
+      "downtime": 9,
+      "renewal_rent": 95,
+      "ti_psf": 500,
+      "escalation": 0.05
+    },
+    {
+      "name": "C",
+      "area": 20000,
+      "rent": 90,
+      "expiry": 30,
+      "renewal_probability": 0.8,
+      "downtime": 3,
+      "renewal_rent": 96,
+      "ti_psf": 500,
+      "escalation": 0.05
+    }
+  ],
+  "minimum_expected_occupancy": 0.74,
+  "total_leasing_capex": 45000000.0,
+  "months": 36,
+  "limitation": "Probability-weighted expected rent, not simulated tenant outcomes. Reletting after downtime assumed certain. No lease renewal correlation, credit loss, rent-free incentives or tax.",
+  "minimum_trailing_12m_dscr": 1.13140194080883,
+  "closing_debt": 490185917.5477305,
+  "financing_assumptions": {
+    "principal": 550000000,
+    "annual_rate": 0.09,
+    "amortization_months": 180
+  }
+}

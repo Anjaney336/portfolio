@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bengaluru Investment &amp; Asset Management | Anjaney Malhotra</title><style>body{margin:0;background:#f4f3ed;color:#182c34;font:17px/1.6 Georgia,serif}main{max-width:1100px;margin:auto;padding:32px 24px}h1,h2,h3,nav,button,select,.tag{font-family:Arial,sans-serif}h1{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:18px 0}h2{font-size:23px}a{color:#126376}nav{display:flex;gap:22px;flex-wrap:wrap}section{background:white;border:1px solid #d8dcd8;border-radius:8px;padding:26px;margin:22px 0}.tag{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#3b7071}select{font-size:16px;padding:10px;max-width:100%;margin-bottom:16px}img{width:100%;height:auto}pre{white-space:pre-wrap;word-break:break-word;font:13px/1.5 monospace;background:#f3f6f5;padding:16px;max-height:500px;overflow:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}.notice{border-left:4px solid #bb8b42;padding-left:18px}li{margin:8px 0}footer{font-size:14px;color:#506167;margin:30px 0}summary{cursor:pointer;font-family:Arial,sans-serif;font-weight:600}button{cursor:pointer}</style></head><body><main><nav><a href="https://anjaney336.github.io/portfolio/#projects">Portfolio</a><a href="https://github.com/Anjaney336/bengaluru-real-estate-investment-lab">GitHub repository</a><a href="https://github.com/Anjaney336/bengaluru-real-estate-investment-lab/blob/main/README.md">Methodology</a></nav><p class="tag">Research dashboard · 24 October 2026 · 35 tests</p><h1>Bengaluru Investment &amp; Asset Management</h1><p>Acquisition underwriting → monthly leases → debt coverage → operating review</p><section><h2>Decision and evidence</h2><p>Consolidates the Bengaluru acquisition model, property operating review and financing stress. The monthly cohort model connects lease expiry and renewal assumptions to amortising debt and trailing coverage.</p><p><strong>Finding.</strong> The synthetic 36-month lease case reaches 74% expected occupancy and 1.13× minimum trailing DSCR. The separate acquisition case still rejects the assumed INR100 crore entry price.</p></section><section><h2>Research views</h2><label for="view">Choose an analysis</label><br><select id="view"><option value="0">Lease and debt review</option><option value="1">Credit capacity</option><option value="2">Financing sensitivity</option></select><figure data-view="0" ><img src="figure-0.svg" alt="Lease and debt review"><figcaption>Lease and debt review. Read the assumptions and units below.</figcaption></figure><figure data-view="1" hidden><img src="figure-1.svg" alt="Credit capacity"><figcaption>Credit capacity. Read the assumptions and units below.</figcaption></figure><figure data-view="2" hidden><img src="figure-2.svg" alt="Financing sensitivity"><figcaption>Financing sensitivity. Read the assumptions and units below.</figcaption></figure></section><div class="grid"><section><h2>Model mechanics</h2><p>Monthly expected rent sums occupied cohort area × rent. Renewal and reletting branches carry separate capex timing. Debt interest uses opening balance × annual rate / 12; trailing DSCR is 12-month NOI divided by 12-month debt service. Acquisition valuation remains a separately parameterised teaching case.</p><p>From basic input reconciliation to stress analysis, each step has an auditable calculation trail in the repository.</p></section><section><h2>Boundaries</h2><p class="notice">Synthetic leases and underwriting assumptions; no actual rent roll, lender agreement or technical inspection. Expected renewal cash flow is not a calibrated probability forecast. Native Excel verification remains pending.</p><p>Offline research software, not a production trading or asset-management system.</p></section></div><section><h2>Data and reproducibility</h2><p>Synthetic inputs in lease_engine.py and assumptions.json; source URLs and access dates in the result JSON. Public-filings case available in embassy_case/.</p><ul><li><a href="data-0.csv" download>Monthly lease cash flows (CSV)</a></li><li><a href="data-1.csv" download>Credit scenarios (CSV)</a></li><li><a href="data-2.csv" download>Acquisition cash flows (CSV)</a></li><li><a href="https://anjaney336.github.io/portfolio/asset-management/">Property operating dashboard</a></li><li><a href="https://anjaney336.github.io/portfolio/embassy-case/">Embassy memo and Excel model</a></li></ul><details><summary>lease_summary.json — exact results and assumptions</summary><pre>{
+  &quot;source&quot;: &quot;Synthetic lease cohorts specified in lease_engine.py&quot;,
+  &quot;source_url&quot;: &quot;https://github.com/Anjaney336/bengaluru-real-estate-investment-lab/blob/main/lease_engine.py&quot;,
+  &quot;access_date&quot;: &quot;2026-10-24&quot;,
+  &quot;assumptions&quot;: [
+    {
+      &quot;name&quot;: &quot;A&quot;,
+      &quot;area&quot;: 40000,
+      &quot;rent&quot;: 92,
+      &quot;expiry&quot;: 12,
+      &quot;renewal_probability&quot;: 0.75,
+      &quot;downtime&quot;: 6,
+      &quot;renewal_rent&quot;: 98,
+      &quot;ti_psf&quot;: 500,
+      &quot;escalation&quot;: 0.05
+    },
+    {
+      &quot;name&quot;: &quot;B&quot;,
+      &quot;area&quot;: 30000,
+      &quot;rent&quot;: 88,
+      &quot;expiry&quot;: 24,
+      &quot;renewal_probability&quot;: 0.6,
+      &quot;downtime&quot;: 9,
+      &quot;renewal_rent&quot;: 95,
+      &quot;ti_psf&quot;: 500,
+      &quot;escalation&quot;: 0.05
+    },
+    {
+      &quot;name&quot;: &quot;C&quot;,
+      &quot;area&quot;: 20000,
+      &quot;rent&quot;: 90,
+      &quot;expiry&quot;: 30,
+      &quot;renewal_probability&quot;: 0.8,
+      &quot;downtime&quot;: 3,
+      &quot;renewal_rent&quot;: 96,
+      &quot;ti_psf&quot;: 500,
+      &quot;escalation&quot;: 0.05
+    }
+  ],
+  &quot;minimum_expected_occupancy&quot;: 0.74,
+  &quot;total_leasing_capex&quot;: 45000000.0,
+  &quot;months&quot;: 36,
+  &quot;limitation&quot;: &quot;Probability-weighted expected rent, not simulated tenant outcomes. Reletting after downtime assumed certain. No lease renewal correlation, credit loss, rent-free incentives or tax.&quot;,
+  &quot;minimum_trailing_12m_dscr&quot;: 1.13140194080883,
+  &quot;closing_debt&quot;: 490185917.5477305,
+  &quot;financing_assumptions&quot;: {
+    &quot;principal&quot;: 550000000,
+    &quot;annual_rate&quot;: 0.09,
+    &quot;amortization_months&quot;: 180
+  }
+}</pre></details><details><summary>committee_summary.json — exact results and assumptions</summary><pre>{
+  &quot;case&quot;: &quot;Synthetic Bengaluru office; not an actual deal&quot;,
+  &quot;base_equity_npv_crore&quot;: -10.999516102218383,
+  &quot;base_minimum_dscr&quot;: 1.0441310167031683,
+  &quot;debt_capacity&quot;: {
+    &quot;limits&quot;: {
+      &quot;DSCR&quot;: 459417647.349394,
+      &quot;LTV&quot;: 550000000.0,
+      &quot;Debt yield&quot;: 791595000.0
+    },
+    &quot;capacity&quot;: 459417647.349394,
+    &quot;binding&quot;: &quot;DSCR&quot;
+  },
+  &quot;maximum_price_crore&quot;: 83.53048133625346,
+  &quot;npv_change_crore_per_1pct_relative_input_change&quot;: {
+    &quot;rent_psf_month&quot;: 1.086341258840938,
+    &quot;occupancy&quot;: 1.0721389082203918,
+    &quot;exit_cap_rate&quot;: -0.6156898520335078,
+    &quot;interest_rate&quot;: -0.1509459475914359
+  },
+  &quot;scenarios&quot;: 20,
+  &quot;assumed_debt_yield_floor&quot;: 0.09,
+  &quot;source&quot;: &quot;model.py and assumptions.json&quot;,
+  &quot;source_url&quot;: &quot;https://github.com/Anjaney336/bengaluru-real-estate-investment-lab/blob/main/model.py&quot;,
+  &quot;access_date&quot;: &quot;2026-10-24&quot;
+}</pre></details></section><footer>Prepared by Anjaney Malhotra with AI coding assistance. Calculations, assumptions and limitations are available for review. No employer sponsorship or live investment track record is implied.</footer></main><script>document.getElementById('view').addEventListener('change',e=>{document.querySelectorAll('[data-view]').forEach(x=>x.hidden=x.dataset.view!==e.target.value)});</script></body></html>
