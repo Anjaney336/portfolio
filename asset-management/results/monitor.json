@@ -1,0 +1,100 @@
+{
+  "as_of": "2026-09-30",
+  "operating_month": "2026-09-01",
+  "units": "INR paise for money; ratios dimensionless",
+  "dataset": "Synthetic demonstration; no actual property or employer records",
+  "assets": [
+    {
+      "asset": "Office-1",
+      "area_occupancy": 0.8,
+      "rent_weighted_wale_years": 2.0,
+      "expiring_12m_rent_share": 0.5,
+      "largest_tenant_share": 0.5,
+      "tenant_hhi": 0.5,
+      "monthly_noi_dscr": 1.54034,
+      "downside_dscr": 1.276306,
+      "contract_monthly_area_difference": -1000,
+      "budget_noi": 480000000,
+      "actual_noi": 462102000,
+      "occupancy_effect": -8000000,
+      "rate_effect": 7900000,
+      "collection_effect": -12798000,
+      "expense_effect": -5000000,
+      "residual": 0
+    },
+    {
+      "asset": "Office-2",
+      "area_occupancy": 0.8,
+      "rent_weighted_wale_years": 2.0,
+      "expiring_12m_rent_share": 0.5,
+      "largest_tenant_share": 0.5,
+      "tenant_hhi": 0.5,
+      "monthly_noi_dscr": 1.5360266666666667,
+      "downside_dscr": 1.2717573333333334,
+      "contract_monthly_area_difference": -2000,
+      "budget_noi": 480000000,
+      "actual_noi": 460808000,
+      "occupancy_effect": -16000000,
+      "rate_effect": 15600000,
+      "collection_effect": -12792000,
+      "expense_effect": -6000000,
+      "residual": 0
+    },
+    {
+      "asset": "Office-3",
+      "area_occupancy": 0.8,
+      "rent_weighted_wale_years": 2.0,
+      "expiring_12m_rent_share": 0.5,
+      "largest_tenant_share": 0.5,
+      "tenant_hhi": 0.5,
+      "monthly_noi_dscr": 1.53106,
+      "downside_dscr": 1.2666206666666666,
+      "contract_monthly_area_difference": -3000,
+      "budget_noi": 480000000,
+      "actual_noi": 459318000,
+      "occupancy_effect": -24000000,
+      "rate_effect": 23100000,
+      "collection_effect": -12782000,
+      "expense_effect": -7000000,
+      "residual": 0
+    },
+    {
+      "asset": "Office-4",
+      "area_occupancy": 0.8,
+      "rent_weighted_wale_years": 2.0,
+      "expiring_12m_rent_share": 0.5,
+      "largest_tenant_share": 0.5,
+      "tenant_hhi": 0.5,
+      "monthly_noi_dscr": 1.6352,
+      "downside_dscr": 1.35968,
+      "contract_monthly_area_difference": 0,
+      "budget_noi": 480000000,
+      "actual_noi": 490560000,
+      "occupancy_effect": 0,
+      "rate_effect": 32000000,
+      "collection_effect": -13440000,
+      "expense_effect": -8000000,
+      "residual": 0
+    }
+  ],
+  "portfolio": {
+    "budget_noi": 1920000000,
+    "actual_noi": 1872788000,
+    "occupancy_effect": -48000000,
+    "rate_effect": 78600000,
+    "collection_effect": -51812000,
+    "expense_effect": -26000000,
+    "residual": 0
+  },
+  "provenance": {
+    "source": "Code-generated fixtures; asset_management/run.py",
+    "source_url": "https://github.com/Anjaney336/bengaluru-office-underwriting/tree/main/asset_management",
+    "generated_on": "2026-10-24",
+    "access_date": "2026-10-24",
+    "sha256": {
+      "assets.csv": "cdce39159a5efe259ae413843ed72fba0714b0ec489fb8b7410502b37028d72b",
+      "leases.csv": "a46f3b4cef4f19fb4f2b82a9716dc31e4b824246933f9f9fc2ae3290c26deb8f",
+      "monthly.csv": "08709a1026a0ba85e31b378d2b339fa03d71d7903da71098a5312eed36f07df8"
+    }
+  }
+}
