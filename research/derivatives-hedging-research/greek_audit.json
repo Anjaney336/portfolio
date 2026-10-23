@@ -1,0 +1,84 @@
+{
+  "greek_checks": 360,
+  "max_scaled_errors": {
+    "delta": 7.514354116722188e-08,
+    "gamma": 3.509277929081289e-07,
+    "vega": 1.4070365650376004e-08,
+    "theta": 1.97369097565403e-07,
+    "rho": 2.096061353290114e-09
+  },
+  "results": {
+    "diffusion": {
+      "delta": {
+        "paths": 150,
+        "rmse": 0.6191117880281172,
+        "mean_pnl": -0.2685117464181182,
+        "loss_probability": 0.6733333333333333,
+        "worst_5pct_mean": -1.5002690185962424,
+        "mean_fees": 0.18595609396565352
+      },
+      "delta_gamma": {
+        "paths": 150,
+        "rmse": 0.2570697219017312,
+        "mean_pnl": -0.21024138747341561,
+        "loss_probability": 1.0,
+        "worst_5pct_mean": -0.6031682635764162,
+        "mean_fees": 0.20828799300520823
+      },
+      "paired_rmse_difference_95pct": [
+        -0.4301321641347945,
+        -0.29165089810408296
+      ]
+    },
+    "jump": {
+      "delta": {
+        "paths": 150,
+        "rmse": 2.490409403156164,
+        "mean_pnl": 1.5075423779083459,
+        "loss_probability": 0.22666666666666666,
+        "worst_5pct_mean": -0.795299274791739,
+        "mean_fees": 0.18584867032881575
+      },
+      "delta_gamma": {
+        "paths": 150,
+        "rmse": 0.5450394055927467,
+        "mean_pnl": -0.26913782971477845,
+        "loss_probability": 0.9266666666666666,
+        "worst_5pct_mean": -1.5563517838573868,
+        "mean_fees": 0.22468697537467486
+      },
+      "paired_rmse_difference_95pct": [
+        -2.3793309311129396,
+        -1.505082971771712
+      ]
+    }
+  },
+  "source": {
+    "name": "Seeded synthetic diffusion and jump paths from hedging.py",
+    "url": "https://github.com/Anjaney336/derivatives-hedging-research/blob/main/hedging.py",
+    "access_date": "2026-10-24",
+    "seeds": [
+      2000,
+      2149
+    ]
+  },
+  "assumptions": {
+    "target_entry_bps": 20,
+    "stock_bps": 5,
+    "hedge_option_bps": 20,
+    "rate": 0.02,
+    "pricing_vol": 0.25,
+    "steps": 63,
+    "option_multiplier": 1,
+    "dividends": 0,
+    "bootstrap_seed": 73,
+    "bootstrap_resamples": 2000
+  },
+  "interpretation": "Long one financed ATM call, hedged with stock and optionally a longer-dated option. P&L in model currency units per target option, not account return. Lower RMSE means lower hedge error, not positive alpha.",
+  "limits": "Synthetic backtest, not historical option-chain returns. Same-close theoretical fills; unlimited funding/stock borrow, no margin, taxes, stochastic implied-volatility surface or empirical spreads. Target entry fee is newly charged; terminal target settlement has no assumed fee. Bootstrap is conditional on this simulator and is not empirical market confidence.",
+  "scope": "All five Greeks validated; dynamic delta/gamma hedging only. Vega/theta/rho measured, not dynamically neutralised.",
+  "hashes": {
+    "greek_validation.csv": "0ec994e63a1e8da96779a1e9e7b20041d9f4d2f583db756d6c433604769e58e4",
+    "all_in_hedge_trials.csv": "8a523e40f9bcb61821122da56430a58b26c76cc92dc7cbb7c36cd6f94677c766"
+  }
+}
