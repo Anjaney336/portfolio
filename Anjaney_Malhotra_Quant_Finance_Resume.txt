@@ -1,0 +1,70 @@
+Anjaney Malhotra
+ Noida, Uttar Pradesh  •  anjaneymalhotra@gmail.com  •  +91 9599366178
+ GitHub  •  LinkedIn  •  Portfolio: anjaney336.github.io/portfolio
+ May 2027 internships | Quantitative Research / Developer Internships | Across India
+SCAN PORTFOLIO
+EDUCATION
+Vellore Institute of Technology (VIT), Vellore
+ 2024–2028 (Expected)
+B.Tech in Mechanical Engineering, CGPA: 8.86 / 10
+EXPERIENCE
+Alvionx
+ Sep 2026–Present
+Fintech Intern
+•
+Journaled 172 completed trades across backtesting work; documented liquidation-based ETH/BTC signals, entries, exits and
+trade rationale.
+•
+Backtested Reliance price triggers: invest 10% of remaining cash per 5% decline from the last buy; exit 5% above
+weighted-average cost.
+LearnTube.ai
+ Oct 2025–Jan 2026
+Data Analytics Intern
+•
+Developed forecasting and data-validation workflows using stationarity tests, seasonal decomposition, error comparisons and
+checks for missing values, duplicates and outliers.
+PROJECTS
+Systematic Strategy Research
+ Code & evidence
+Python, NumPy | Chronological selection and portfolio accounting
+•
+Built 9 rule variants with rolling 504/126-observation selection, volatility sizing, delayed signals and drift-aware cost
+accounting; added 12 tests.
+•
+Evaluated 1,422 historical observations, five fee scenarios and block-bootstrap comparisons; documented
+underperformance versus buy-and-hold.
+Derivatives Hedging Research
+ Code & evidence
+Python | Greeks, nonlinear risk and self-financing hedges
+•
+Implemented pricing, implied volatility and delta/gamma hedges with financing, costs and position caps; validated Greeks
+and accounting with 26 tests.
+•
+Evaluated 900 hedge runs plus 600 delta/gamma comparisons; published hedge-error distributions under diffusion/jump
+assumptions using model-priced options.
+Integrated Real Assets Research
+ Code & evidence
+Python | Listed-property signals, tail risk and execution
+•
+Integrated cointegration/Kalman signals, lagged expected-shortfall scaling and execution stress; evaluated 1,675 historical
+observations with 53 tests.
+•
+Published negative baseline and overlay returns, cost sensitivities and 200 paired-policy execution runs; distinguished
+simulation from market evidence.
+Opti-Workbench — Constrained Portfolio Optimisation
+ Code & evidence
+Python, CVXPY | Synthetic allocation research
+•
+Implemented empirical-CVaR convex seeding and PSO/GA refinement with allocation, budget and cardinality constraints;
+documented objective differences.
+•
+Added train-only rolling evaluation with drift-adjusted holdings and turnover costs; compared four solvers with an
+equal-weight reference on synthetic data.
+SKILLS
+Quantitative: Time series, backtesting, option Greeks, portfolio risk, execution and inference.
+Tools: Python, pandas, NumPy, SQL/SQLite, Excel, scikit-learn, statsmodels, Git/GitHub.
+CERTIFICATIONS
+Google AI Essentials — Google / Coursera (Dec 2025)  |  MATLAB Onramp — MathWorks (Jan 2026)  |  Python — Kaggle (Dec 2025)  |  Data
+Analytics — Skillsetmaster (Jan 2026)
+Artificial Intelligence — Skillumni (Apr 2026)  |  Onshape Hands-On Test Drive — Onshape by PTC (Aug 2026)  |  Data Analytics Assessment —
+LearnTube.ai (Jan 2026, ID DJA-B-1-1989388-0)  |  Time Series Forecasting Assessment — LearnTube.ai (Jan 2026, ID DJA-B-1-1989425-0)
